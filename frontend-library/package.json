@@ -1,0 +1,43 @@
+{
+  "name": "frontend-library",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/frontend-library.umd.js",
+  "module": "./dist/frontend-library.es.js",
+  "export": {
+    ".": {
+      "import": "./dist/frontend-library.es.js",
+      "require": "./dist/frontend-library.umd.js"
+    },
+    "./dist/frontend-library.css": {
+      "import": "./dist/frontend-library.css",
+      "require": "./dist/frontend-library.css"
+    }
+  },
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "setup": "npm link"
+  },
+  "dependencies": {
+    "@chakra-ui/vue": "^0.13.1",
+    "@phosphor-icons/vue": "^2.1.4",
+    "axios": "^1.4.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@chakra-ui/vue-next": "^1.0.0-alpha.16",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.2.0",
+    "vue-tsc": "^1.8.3"
+  }
+}

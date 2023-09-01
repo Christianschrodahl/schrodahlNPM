@@ -1,0 +1,66 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+$columns: 12;
+
+.row.no-gutters>[class*=col-] {
+    padding: 0;
+}
+
+.row.no-margin>[class*=col-], .row.no-margin * {
+    margin: 0;
+}
+.row>[class*=col-] {
+    margin-left: auto;
+    margin-right: auto;
+}
+.col{
+    flex: 1;
+}
+@include xs {
+    @for $i from 1 through $columns {
+        .col-xs#{$i} {
+            flex: 0 0 calc(100% / $columns * $i);
+            max-width: calc(100% / $columns * $i);
+        }
+        .col-offset-left-xs#{$i} {
+            margin-left: calc(100% / $columns * $i)!important;
+        }
+        .col-offset-right-xs#{$i} {
+            margin-right: calc(100% / $columns * $i)!important;
+        }
+    }
+}
+@include sm {
+    @for $i from 1 through $columns {
+        .col-sm#{$i} {
+            flex: 0 0 calc(100% / $columns * $i);
+            max-width: calc(100% / $columns * $i);
+        }
+    }
+}
+@include md {
+    @for $i from 1 through $columns {
+        .col-md#{$i} {
+            flex: 0 0 calc(100% / $columns * $i);
+            max-width: calc(99% / $columns * $i);
+        }
+        .col-offset-left-md#{$i} {
+            margin-left: calc(100% / $columns * $i)!important;
+        }
+        .col-offset-right-md#{$i} {
+            margin-right: calc(100% / $columns * $i)!important;
+        }
+    }
+}
+@include lg {
+    @for $i from 1 through $columns {
+        .col-lg#{$i} {
+            flex: 0 0 calc(100% / $columns * $i);
+            max-width: calc(99% / $columns * $i);
+        }
+    }
+}
