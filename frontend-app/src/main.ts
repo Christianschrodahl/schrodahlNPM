@@ -5,9 +5,11 @@ import App from './App.vue'
 import router from './router'
 import frontendLib from 'frontend-library'
 import 'frontend-library/dist/frontend-library.css'
+import {store} from '@/vuex/store'
+
 
 const app = createApp(App)
 app.use(frontendLib)
 app.use(router)
-
+app.use(store)
 app.mount('#app')

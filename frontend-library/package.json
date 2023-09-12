@@ -1,7 +1,7 @@
 {
-  "name": "frontend-library",
+  "name": "schrodahl-library",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
@@ -26,15 +26,15 @@
     "setup": "npm link"
   },
   "dependencies": {
-    "@chakra-ui/vue": "^0.13.1",
     "@phosphor-icons/vue": "^2.1.4",
     "axios": "^1.4.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@chakra-ui/vue-next": "^1.0.0-alpha.16",
     "@vitejs/plugin-vue": "^4.2.3",
     "rollup-plugin-typescript2": "^0.35.0",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-dts": "^3.2.0",

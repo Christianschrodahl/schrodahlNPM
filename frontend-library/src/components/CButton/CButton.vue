@@ -1,23 +1,26 @@
 <template>
-    <button v-style-setup="$.type, $attrs" class="CButton" ><slot/></button>
+    <component :is="as ?? 'button'" v-style-setup="$.type, $attrs, uniqueCompId" :data-id="uniqueCompId" class="CButton" :disabled='isDisabled' >
+    <c-icon v-if="leftIcon" :as="leftIcon" margin-right="8px" />
+    <slot/>
+    <c-icon v-if="rightIcon" :as="rightIcon" margin-left="8px" />
+    </component>
 </template>
 <script setup lang="ts">
 import {ref, inject, watch, Ref, computed} from 'vue'
 import createButtonStyle from './utils/button.styles'
 import type {ButtonProps} from './utils/button.props'
-import buttonProps from './utils/button.props';
-const {variant= 'primary', ...prop} = defineProps<ButtonProps>()
-
+import CIcon from '../CIcon/CIcon.vue';
+import generateRandomUniqueID from '@/utils/uniqueID';
+const {variant= 'primary', as='button', ...prop} = defineProps<ButtonProps>()
+console.log(as)
 interface MyObject {
   [key: string]: any;
 }
 const themeStyle: MyObject = inject('theme')
 const colorMode:Ref<string> = inject('colorMode')
-
+const uniqueCompId = generateRandomUniqueID()
 let themeColors = computed({
     get(){
-        console.log(variant, "TTTTTTTT", themeStyle)
-
         return themeStyle.CButton[variant]
     },
     set(e){
@@ -31,6 +34,7 @@ watch(()=>themeStyle, (v)=>{
 
 </script>
 <style scoped>
+
 button {
     line-height: v-bind('baseStyle.lineHeight');
     padding: v-bind('baseStyle.padding');
@@ -43,6 +47,9 @@ button {
     width: v-bind('baseStyle.width');
     max-width: v-bind('baseStyle.maxWidth');
     font-weight: v-bind('baseStyle.fontWeight');
+    box-sizing: border-box;
+    border-color: transparent;
+    box-shadow: 0px 0px 0px 0px rgba(255, 166, 0, 0);
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
@@ -91,5 +98,7 @@ button[data-disabled],button[disabled] {
         cursor: not-allowed;
         box-shadow: none
 }
-
+.CButton:hover{
+    cursor: pointer;
+}
 </style>

@@ -26,7 +26,10 @@ const theme = {
       // Add more colors and design tokens here
     },
     radii:{
-        md: '8px'
+        xl: '24px',
+        lg: '16px',
+        md: '8px',
+        xs: '2px'
     },
     fontSize: {
       base: '1rem'

@@ -1,5 +1,5 @@
 <template>
-    <component :is="'h3'" v-style-setup="$.type, $attrs" class="CCardTitle" >
+    <component :is="'h3'" v-style-setup="$.type, $attrs, uniqueCompId" :data-id="uniqueCompId" class="CCardTitle" >
         <slot />
     </component>
 </template>
@@ -22,7 +22,18 @@ const baseStyles:baseStyle = {
     fontWeight: "900",
     fontSize:'18px'
 }
+function generateRandomUniqueID(): string {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let uniqueID = '';
 
+  for (let i = 0; i < 6; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    uniqueID += characters.charAt(randomIndex);
+  }
+
+  return uniqueID;
+}
+const uniqueCompId =generateRandomUniqueID()
 </script>
 <style scoped>
 .CCardTitle{

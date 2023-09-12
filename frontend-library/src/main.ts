@@ -1,11 +1,14 @@
 import type { App } from 'vue';
-import {ref, reactive, watch, nextTick} from 'vue'
+import {ref, reactive, watch} from 'vue'
 import components from "@/components";
 import lightTheme from './customTheme/lightTheme'
 import darkTheme from './customTheme/darkTheme'
 import globalTheme from './customTheme/theme'
 import deepMerge from './utils/deepMerge'
 import { setCustomStyleFromAttr, themeSetup, settingUpGlobalStyles } from './customTheme/utils/styles';
+import { VCol, VRow } from './directives/grid';
+import CThemeProvider from '@/components/CThemeProvider/CThemeProvider.vue'
+
 export default {
   install: (app: App) => {
     const themeMode = ref('dark');
@@ -31,23 +34,33 @@ export default {
       // Apply the global styles
       themeSetup(theme)
     })
-
+  
     app.provide('theme', theme );
     app.provide('colorMode', themeMode );
     app.config.globalProperties.$toggleTheme = (mode)=>toggleTheme()
     //component styleSetup
     const vStyleSetup = {
       beforeMount(el:HTMLElement, binding) {  
-        console.log("BINDING", binding)
-        setCustomStyleFromAttr(binding.value.__scopeId, el.tagName.toLowerCase(), binding.arg, el)
+        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el)
+      },
+      beforeUpdate(el, binding) {
+        //WE MIGHT NEED TO CHANGE THIS BECAUSE THIS WILL TRIGGER FROM PARENT EVENT
+        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el)
       },
     }
     app.directive("styleSetup", vStyleSetup)
+    app.directive("row", VRow)
+    app.directive("col", VCol)
+    
+    //components
 
+    app.component('CThemeProvider',CThemeProvider)
     for (const prop in components) {
       if (components.hasOwnProperty(prop)) {
         const component = components[prop]
-        
+        if(component.__name === 'CIcon'){
+          console.log("CICON!!", component)
+        }
         //Setting up component styling from theme styling
         if(theme[component.__name]){
           settingUpGlobalStyles(theme, document.head, component)

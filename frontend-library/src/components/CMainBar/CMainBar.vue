@@ -31,6 +31,7 @@ header{
     min-width: 100%;
     background: v-bind('baseStyles.background');
     color: v-bind('baseStyles.color');
+    display: flex;
 }
 
 </style>

@@ -8,7 +8,11 @@ export default{
       background: "pink",
       color:"red"
     },
-
+    CCard:{
+      background: '#ffffff',
+      color: '#000000',
+      'border-color': '#7bbaff'
+    },
     CButton: {
       primary: {
         bg: {
@@ -23,8 +27,65 @@ export default{
             _hover: 'yellow',
             _focused: 'red'
         }
-      }
+      },
+      secondary: {
+        bg: {
+            base: 'blue',
+            _active: 'yellow',
+            _hover: 'green',
+            _focused: 'purple'
+        },
+        font:{
+            base: 'purple',
+            _active: 'pink',
+            _hover: 'white',
+            _focused: 'red'
+        }
+      },
       
+    },CAlert: {
+      information: {
+        bg: {
+            base: 'blue',
+            _active: 'lightblue',
+            _hover: 'lightblue',
+            _focused: 'lightblue'
+        },
+        font:{
+            base: 'white',
+            _active: 'pink',
+            _hover: 'yellow',
+            _focused: 'red'
+        }
+      },
+      warning: {
+        bg: {
+            base: 'orange',
+            _active: 'yellow',
+            _hover: 'green',
+            _focused: 'purple'
+        },
+        font:{
+            base: 'black',
+            _active: 'pink',
+            _hover: 'white',
+            _focused: 'red'
+        }
+      },
+      success: {
+        bg: {
+            base: 'lightgreen',
+            _active: 'yellow',
+            _hover: 'green',
+            _focused: 'purple'
+        },
+        font:{
+            base: 'black',
+            _active: 'pink',
+            _hover: 'white',
+            _focused: 'red'
+        }
+      }
     },
     colors: {
       primary: {

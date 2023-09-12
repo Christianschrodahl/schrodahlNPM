@@ -3,7 +3,7 @@ import { PropType } from "vue";
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 
 interface ButtonProps {
-  as: string | any;
+  as?: string | any;
   to: string | any;
   type: Record<string, any>;
   variant?: any|ButtonVariant;

@@ -6,5 +6,7 @@ import CCardTitle from './CCard/CCardTitle.vue'
 import CCardContent from './CCard/CCardContent.vue'
 import CContainer from './CContainer/CContainer.vue'
 import CText from './CText/CText.vue'
+import CAlert from './CAlert/CAlert.vue'
+import CIcon from './CIcon/CIcon.vue'
 
-export default {CMainBar,CMain, CButton, CCard, CContainer, CCardTitle, CCardContent, CText}
+export default {CMainBar,CMain, CButton, CCard, CContainer, CCardTitle, CCardContent, CText, CAlert, CIcon}

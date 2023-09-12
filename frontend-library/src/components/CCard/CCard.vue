@@ -1,9 +1,10 @@
 <template>
-    <component :is="'div'" v-style-setup="$.type, $attrs" class="CCard" >
+    <component :is="'div'" v-style-setup="$.type, $attrs, uniqueCompId" :data-id="uniqueCompId" class="CCard" >
         <slot />
     </component>
 </template>
 <script setup lang="ts">
+import generateRandomUniqueID from '@/utils/uniqueID';
 import { Component, Ref, computed, inject } from 'vue';
 
 //move this to the global file
@@ -18,9 +19,9 @@ type baseStyle = {
     borderRadius: string
 }
 const baseStyles:baseStyle = {
-    borderRadius: theme.radii.md
+    borderRadius: theme.radii.lg
 }
-
+const uniqueCompId = generateRandomUniqueID()
 </script>
 <style scoped>
 .CCard{
@@ -35,9 +36,9 @@ const baseStyles:baseStyle = {
     transition-property: box-shadow,opacity,background;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     z-index: 0;
-    border-color: rgba(0,0,0, 0.5 );
+   /* border-color: #7bbaff;*/
     border-style: solid;
-    border-width: 0;
+    border-width: 0.1%;
     border-radius: v-bind('baseStyles.borderRadius');
 }
 </style>

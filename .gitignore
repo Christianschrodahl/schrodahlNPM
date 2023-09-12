@@ -1,0 +1,3 @@
+frontend-app/node_modules/*
+frontend-library/node_modules/*
+frontend-library/src/components/CAlert/utils

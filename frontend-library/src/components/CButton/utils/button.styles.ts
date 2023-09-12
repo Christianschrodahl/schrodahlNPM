@@ -1,4 +1,5 @@
 import theme from '@/customTheme/theme'
+import deepMerge from '@/utils/deepMerge'
 type baseStyle = {
     padding: string,
     letterSpacing: string,
@@ -29,7 +30,7 @@ type bg = {
     _focused: string
 }
 const baseStyles:baseStyle = {
-    padding:"10px 16px",
+    padding:"10px 28px",
     letterSpacing:"0.6px",
     height:"10",
     margin:"5px",
@@ -37,16 +38,17 @@ const baseStyles:baseStyle = {
     fontSize:theme.fontSize.base,
     width: "100%",
     maxWidth: 'fit-content',
-    borderRadius: theme.radii.md,
+    borderRadius: theme.radii.xl,
     lineHeight: theme.lineHeights.base,
     fontWeight: theme.fontWeights.bold
 }
 
-const primaryBtn = ({ colors, colorMode }: { colors: Colors; colorMode: string }) => {
+const colorsSetup = ({ colors, colorMode, additionalStyling }: { colors: Colors; colorMode: string, additionalStyling:Record<string,string> }) => {
     let style: Record<string, any> = {
       light: {
         bg: colors.bg.base,
         color: colors.font.base,
+
         _hover: {
           bg: colors.bg._hover,
           color: colors.font._hover
@@ -67,25 +69,25 @@ const primaryBtn = ({ colors, colorMode }: { colors: Colors; colorMode: string }
         }
       }
     };
-    return style[colorMode];
+    return deepMerge(style[colorMode], additionalStyling);
   };
 /**
  * @description Determines styles for a given variant
  * @param {Object} props - Props Object
  * @returns {Object} - Variant styles object
  */
-const getVariantStyles = (props: { variant: string, colors:Colors, colorMode: string }) => {
+const getVariantStyles = (props: { variant: string, colors:Colors, colorMode: string, additionalStyling: Record<string,string> }) => {
     switch (props.variant) {
       case 'primary':
-        return primaryBtn(props);
-      /*case 'secondary':
-        return secondaryBtn(props);
-      case 'tertiary':
+        return colorsSetup(props);
+      case 'secondary':
+        return colorsSetup(props);
+      /*case 'tertiary':
         return tertiaryBtn(props);
       case 'unstyled':
         return unstyledStyle;*/
       default:
-        return primaryBtn(props);
+        return colorsSetup(props);
     }
   };
 

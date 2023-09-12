@@ -42,12 +42,12 @@ async function addStylesheetRules(rules: string[]|Array<any>):Promise<void> {
   }
 export async function setCustomStyleFromAttr(scopeId:string, elementName: string, attrs: Object, el:HTMLElement):Promise<void> {
   const generateRule = await convertAttrToStyling(attrs, el)
-  console.log(generateRule)
   await addStylesheetRules([[`${elementName}[${scopeId}]`,generateRule]])
-
+  
   // remmove css atributs in the dom element
   Object.entries(attrs).forEach(([k,v]) =>{
-    if( el.style.hasOwnProperty(k)){
+    if( el.style.hasOwnProperty(k) && !(k in el)){
+      console.log('attr', k,)
         el.removeAttribute(k)
     }    
   })
@@ -162,6 +162,7 @@ export function themeSetup(theme: Record<string, Record<string, any>>): void {
 export function settingUpGlobalStyles(theme: Record<string, any>, element: HTMLElement, component: any): void {
   const dynamicStyle = document.createElement('style');
   dynamicStyle.setAttribute('type', 'text/css');
+  
   const uniqueID = component['__scopeId'] ? `[${component['__scopeId']}]` : '';
   const componentName = component.__name
   const generateDynamicStyles = (selector: string, styles: any): string[] => {

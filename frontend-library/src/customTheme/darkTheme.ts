@@ -10,24 +10,82 @@ export default{
     },
     CCard:{
       background: '#21252C',
-      color: '#ffffff'
+      color: '#ffffff',
+      'border-color': '#7bbaff'
     },
     CButton: {
       primary: {
         bg: {
-            base: 'yellow',
-            _active: 'pink',
-            _hover: 'purple',
-            _focused: 'red'
+          base: '#7bbaff',
+          _active: '#026bde',
+          _hover: '#026bde',
+          _focused: '#026bde'
+      },
+      font:{
+          base: '#16191D',
+          _active: 'white',
+          _hover: 'white',
+          _focused: 'white'
+      }
+      },
+      secondary: {
+        bg: {
+            base: 'pink',
+            _active: 'blue',
+            _hover: 'green',
+            _focused: 'purple'
         },
         font:{
-            base: 'green',
+            base: 'purple',
+            _active: 'pink',
+            _hover: 'white',
+            _focused: 'red'
+        }
+      },
+    },
+    CAlert: {
+      information: {
+        bg: {
+            base: '#d2e1ff',
+            _active: 'lightblue',
+            _hover: 'lightblue',
+            _focused: 'lightblue'
+        },
+        font:{
+            base: '#16191D',
+            _active: '#16191D',
+            _hover: '#16191D',
+            _focused: '#16191D'
+        }
+      },
+      warning: {
+        bg: {
+            base: 'orange',
+            _active: 'yellow',
+            _hover: 'green',
+            _focused: 'purple'
+        },
+        font:{
+            base: 'black',
+            _active: 'pink',
+            _hover: 'white',
+            _focused: 'red'
+        }
+      },
+      success: {
+        bg: {
+            base: 'lightgreen',
+            _active: 'yellow',
+            _hover: 'green',
+            _focused: 'purple'
+        },
+        font:{
+            base: 'black',
             _active: 'pink',
             _hover: 'white',
             _focused: 'red'
         }
       }
-      
     },
     colors: {
       primary: {
