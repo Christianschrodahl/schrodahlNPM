@@ -28,10 +28,15 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = worker
 
 const scale = ref<number>(1)
 let pdfDoc = ref<any>(null)
-let pageNum = ref(1)
 let pages = ref<T[]>([])
 let canvasRefs = ref()
 let maxPages = ref<number>(0)
+  watch(scale, (v)=>{
+  for(let i = 0; i < maxPages.value; i++){
+    renderPage(i)
+  }
+  
+})
 async function renderPage(num:number) {
       const canvas = canvasRefs.value[num-1]
       
@@ -97,7 +102,6 @@ async function renderPage(num:number) {
 display: flex;
 flex-wrap: wrap;
 scroll-behavior: smooth;
-
 }
 .pdf-sidebar{
     position:static;
