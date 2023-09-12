@@ -6,13 +6,8 @@
         <fullPDFViewer as="aside" :currentPdf="testPdf" pageGap="10px" :scale="1"/>-->
         <!--Main document
        <fullPDFViewer as="section" class="documentView__document" :scale="scale" :currentPdf="testPdf" pageGap="10px"/>-->
-       <pdfViewer2 :scale="scale"/>
-        <Teleport to="#main-bar-action">
-            <c-button variant="primary" @click="scale = scale < 2 ? scale + 0.25 : scale">+</c-button>
-            <span style="color:white;">{{ scale * 100 }}%</span>
-            <c-button variant="primary" @click="scale = scale > 0.25 ? scale - 0.25 : scale">-</c-button>
-            
-        </Teleport>
+       <pdfViewer />
+        
         <c-button variant="primary" position="fixed" bottom="10px" right="10px" height="min-content" @click="()=> confirmDoc($router)">confirm</c-button>
     
     </div>
@@ -20,20 +15,20 @@
 <script setup lang="ts">
 import {useStore} from 'vuex'
 import fullPDFViewer from '@/components/fullPDFViewer.vue';
-import pdfViewer from '@/components/pdfViewer.vue';
+import pdfViewer from '@/components/pdfViewerPage.vue';
 import testPdf from '../assets/testPDF.pdf'
-import pdfViewer2 from '@/components/pdfViewer2.vue';
+//import pdfViewer2 from '@/components/pdfViewer2.vue';
 import { ref } from 'vue';
 const store = useStore()
 function confirmDoc(router:any){
     store.commit('confirmed', {id:router.currentRoute.value.query.id})
     router.push('/')
 }
-const scale = ref<number>(1)
+
 
 </script>
 <style>
-.documentView {
+/*.documentView {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
 grid-template-rows: repeat(4, 1fr);
@@ -60,6 +55,6 @@ grid-row-gap: 0px;
 }
 .documentView__controls button{
     margin: auto;
-}
+}*/
 
 </style>

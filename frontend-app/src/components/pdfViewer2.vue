@@ -1,16 +1,24 @@
 <template>
     <div class="pdf-viewer" >
-      <div class="pdf-sidebar">
+      <aside class="pdf-sidebar">
+        <nav class="pdf-sidebar-menu">
         <ul class="thumbnails">
           <li v-for="(page, index) in pages" :key="index" @click="goToPage(index)">
-            <img :src="page.thumbnail" alt="Page {{ index + 1 }}" />
+                <img :src="page.thumbnail" alt="Page {{ index + 1 }}" />
           </li>
         </ul>
-      </div>
+      </nav>
+      </aside>
       <div class="pdf-content">
         <canvas ref="pdfCanvas"></canvas>
       </div>
     </div>
+    <Teleport to="#main-bar-action">
+            <c-button variant="primary" @click="scale = scale < 2 ? scale + 0.25 : scale">+</c-button>
+            <span style="color:white;">{{ scale * 100 }}%</span>
+            <c-button variant="primary" @click="scale = scale > 0.25 ? scale - 0.25 : scale">-</c-button>
+            
+        </Teleport>
   </template>
 <script setup lang="ts" generic="T">
 //import  * as pdfjsLib from "pdfjs-dist/build/pdf";
@@ -20,19 +28,14 @@ import type {PDFDocumentLoadingTask, PDFPageProxy} from 'pdfjs-dist/build/pdf.js
 import testPdf from '../assets/testPDF.pdf'
 import { onMounted, ref, watch } from "vue";
 pdfjsLib.GlobalWorkerOptions.workerSrc = worker
-let props = defineProps<{
-    currentPdf?: any,
-    pageGap?: string,
-    as?: any,
-    scale?: number
-}>()
+
+const scale = ref<number>(1)
 let pdfDoc = ref<any>(null)
 let pageNum = ref(1)
 let pages = ref<T[]>([])
 let pdfCanvas = ref<any>(null)
-const currentScale = ref(props.scale)
-watch(currentScale, (v)=>{
-  console.log("SCALE UPDATED", v)
+watch(scale, (v)=>{
+  renderPage(pageNum.value)
 })
 async function renderPage(num:number) {
       const canvas = pdfCanvas.value;
@@ -41,7 +44,7 @@ async function renderPage(num:number) {
       await pdfDoc.value.promise.then(async t=>{
        
      let page = await t.getPage(num)
-      const viewport = page.getViewport({ scale: currentScale.value });
+      const viewport = page.getViewport({ scale: scale.value });
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 
@@ -91,22 +94,43 @@ onMounted(async ()=>{
 </script>
 
 <style scoped>
+
 .pdf-viewer {
-  display: flex;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+}
+.pdf-sidebar{
+    position:static;
+    overflow: none;
+    width: 100%; 
+    max-width:200px;
+    min-width:200px; 
+    height: 100%; 
+    min-height: 100%; 
+    background: #21252C;
+    grid-area: 1 / 1 / 6 / 2; }
+.pdf-sidebar-menu{
+  position: fixed;
+  width: 100%; 
+    max-width:150px;
+    min-width:150px; 
+    height: 100%; 
+    min-height: 100%; 
+    overflow: scroll;
+    margin: auto;
+    padding: auto 20px;
 }
 
-.pdf-sidebar {
-  width: 20%;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.pdf-content {
-  flex-grow: 1;
-  overflow: auto;
-}
+.pdf-content { 
+  width: 100%;
+  grid-area: 1 / 2 / 4 / 4; }
 .pdf-content canvas{
-  max-width: -webkit-fill-available
+  max-width: -webkit-fill-available;
+  
 }
 .thumbnails {
   list-style-type: none;
