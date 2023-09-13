@@ -9,10 +9,25 @@ import { setCustomStyleFromAttr, themeSetup, settingUpGlobalStyles } from './cus
 import { VCol, VRow } from './directives/grid';
 import CThemeProvider from '@/components/CThemeProvider/CThemeProvider.vue'
 
+interface appOptions{
+  customTheme?:  Record<string, any>,
+  colorMode?: 'light' | 'dark'
+}
+
 export default {
-  install: (app: App) => {
-    const themeMode = ref('dark');
-    let theme = reactive(deepMerge(globalTheme, darkTheme))
+  install: (app: App, options: appOptions) => {
+    const themeMode = ref(options?.colorMode ? options.colorMode : 'dark');
+    let theme = reactive(deepMerge(globalTheme, themeMode.value === 'dark' ? darkTheme : lightTheme))
+
+    if(options.customTheme){
+      try {
+        //if custom theme exist in the project
+        theme = Object.assign(theme, {...options.customTheme[themeMode.value]});
+      } catch (error) {
+        console.error(error)
+      }
+      
+    }
     //setting up default theme
     themeSetup(theme)
     // Toggle function to switch between light and dark themes
@@ -28,6 +43,7 @@ export default {
         theme= Object.assign(theme, {...lightTheme});
       }
     }
+    
    
     //Change theme mode
     watch(themeMode, (v)=>{

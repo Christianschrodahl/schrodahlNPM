@@ -11,8 +11,8 @@
 <script setup lang="ts">
 import generateRandomUniqueID from '@/utils/uniqueID';
 import { Ref, computed, inject, ref, watch } from 'vue';
-import createAlertStyle from './utils/alert.styles'
-import type {AlertProps} from './utils/alert.props'
+//import createAlertStyle from './utils/alert.styles'
+//import type {AlertProps} from './utils/alert.props'
 import CIcon from '../CIcon/CIcon.vue';
 import CText from '../CText/CText.vue';
 import {PhInfo, PhCheckCircle} from '@phosphor-icons/vue'
@@ -20,7 +20,7 @@ import {PhInfo, PhCheckCircle} from '@phosphor-icons/vue'
 interface currentTheme {
   [key: string]: any
 }
-const {variant= 'information',as="div", ...prop} = defineProps<AlertProps>()
+const {variant= 'information',as="div", ...prop} = defineProps()
 const theme:currentTheme = inject('theme')
 const colorMode:Ref<string> = inject('colorMode')
 
@@ -35,7 +35,7 @@ let themeColors = computed({
         return e
     }
 })
-let baseStyle = ref(createAlertStyle({...prop, colors: themeColors.value, colorMode: colorMode.value}))
+/*let baseStyle = ref(createAlertStyle({...prop, colors: themeColors.value, colorMode: colorMode.value}))
 watch(()=>theme, (v)=>{
     baseStyle.value = createAlertStyle({...prop, colors: themeColors.value, colorMode: colorMode.value})
 },{deep: true})
@@ -54,9 +54,10 @@ let variantIcon = computed({
     set(v){
         return v
     }
-})
+})*/
 </script>
 <style scoped>
+/*
 .CAlert{
     display: flex;
     overflow: hidden;
@@ -75,5 +76,5 @@ let variantIcon = computed({
     border-style: solid;
     border-width: 0;
     border-radius: v-bind('baseStyle.borderRadius');
-}
+}*/
 </style>

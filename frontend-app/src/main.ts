@@ -9,7 +9,16 @@ import {store} from '@/vuex/store'
 
 
 const app = createApp(App)
-app.use(frontendLib)
+app.use(frontendLib, {
+    colorMode: 'dark',
+    customTheme:{
+        dark:{
+            layout:{
+                background: "red"
+              },
+        }
+    }
+})
 app.use(router)
 app.use(store)
 app.mount('#app')
