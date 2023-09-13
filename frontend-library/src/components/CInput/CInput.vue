@@ -7,8 +7,20 @@
         <span class="error">Field Required</span>
       </div>
 </template>
-<script setup lang="ts">
-
+<script setup lang="ts" generic="T">
+import {inputSettings} from './utils/input.composables.ts'
+import type {inputProps} from "./utils/input.props"
+import {watch, ref} from 'vue'
+const props = defineProps<inputProps>()
+const { error, validate } = inputSettings(props)
+let emit = defineEmits(["input"])
+let modelValue = ref(props.modelValue)
+watch(modelValue, (v)=>{
+        emit("input", v)
+        if(props.rules){
+            validate(v)
+        }
+    })
 </script>
 <style>
 

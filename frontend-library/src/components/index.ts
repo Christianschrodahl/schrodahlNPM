@@ -8,5 +8,7 @@ import CContainer from './CContainer/CContainer.vue'
 import CText from './CText/CText.vue'
 import CAlert from './CAlert/CAlert.vue'
 import CIcon from './CIcon/CIcon.vue'
+import CInput from './CInput/CInput.vue'
+import CForm from './CForm/CForm.vue'
 
-export default {CMainBar,CMain, CButton, CCard, CContainer, CCardTitle, CCardContent, CText, CAlert, CIcon}
+export default {CMainBar,CMain, CButton, CCard, CContainer, CCardTitle, CCardContent, CText, CAlert, CIcon, CForm, CInput}
