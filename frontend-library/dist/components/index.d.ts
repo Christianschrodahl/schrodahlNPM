@@ -4,7 +4,6 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -48,6 +47,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -96,7 +96,6 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -140,6 +139,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -188,18 +188,8 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                readonly as?: any;
-                readonly to: any;
                 readonly type: unknown;
-                readonly variant?: any;
-                readonly isDisabled: unknown;
-                readonly isLoading: unknown;
-                readonly isActive: unknown;
-                readonly loadingText: unknown;
-                readonly iconSpacing: unknown;
-                readonly leftIcon: unknown;
-                readonly rightIcon: unknown;
-                style?: unknown;
+                readonly as?: any;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -243,6 +233,16 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
+                readonly to: any;
+                readonly variant?: any;
+                readonly isDisabled: unknown;
+                readonly isLoading: unknown;
+                readonly isActive: unknown;
+                readonly loadingText: unknown;
+                readonly iconSpacing: unknown;
+                readonly leftIcon: unknown;
+                readonly rightIcon: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -421,7 +421,6 @@ declare const _default: {
             $data: {};
             $props: {
                 readonly as: unknown;
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -465,6 +464,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -528,7 +528,6 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -572,6 +571,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -621,7 +621,6 @@ declare const _default: {
             $data: {};
             $props: {
                 readonly as: unknown;
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -665,6 +664,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -729,7 +729,6 @@ declare const _default: {
             $data: {};
             $props: {
                 readonly as: unknown;
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -773,6 +772,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -837,7 +837,6 @@ declare const _default: {
             $data: {};
             $props: {
                 readonly as?: unknown;
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -881,6 +880,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -941,7 +941,8 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                style?: unknown;
+                readonly type: unknown;
+                readonly as: any;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -985,6 +986,17 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
+                readonly title: unknown;
+                readonly to: any;
+                readonly variant?: any;
+                readonly isDisabled: unknown;
+                readonly isLoading: unknown;
+                readonly isActive: unknown;
+                readonly loadingText: unknown;
+                readonly iconSpacing: unknown;
+                readonly leftIcon: unknown;
+                readonly rightIcon: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -999,7 +1011,55 @@ declare const _default: {
             $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>;
             $emit: (event: string, ...args: any[]) => void;
             $el: any;
-            $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & {
+            $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+                title: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                as: {
+                    type: import("vue").PropType<any>;
+                    required: true;
+                };
+                to: {
+                    type: import("vue").PropType<any>;
+                    required: true;
+                };
+                type: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                variant: {
+                    type: import("vue").PropType<any>;
+                };
+                isDisabled: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                isLoading: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                isActive: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                loadingText: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                iconSpacing: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                leftIcon: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+                rightIcon: {
+                    type: import("vue").PropType<Record<string, any>>;
+                    required: true;
+                };
+            }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & {
                 beforeCreate?: (() => void) | (() => void)[];
                 created?: (() => void) | (() => void)[];
                 beforeMount?: (() => void) | (() => void)[];
@@ -1019,11 +1079,107 @@ declare const _default: {
             $forceUpdate: () => void;
             $nextTick: typeof import("vue").nextTick;
             $watch<T extends string | ((...args: any) => any)>(source: T, cb: T extends (...args: any) => infer R ? (args_0: R, args_1: R) => any : (...args: any) => any, options?: import("vue").WatchOptions<boolean>): import("vue").WatchStopHandle;
-        } & Readonly<import("vue").ExtractPropTypes<{}>> & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
+        } & Readonly<import("vue").ExtractPropTypes<{
+            title: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            as: {
+                type: import("vue").PropType<any>;
+                required: true;
+            };
+            to: {
+                type: import("vue").PropType<any>;
+                required: true;
+            };
+            type: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            variant: {
+                type: import("vue").PropType<any>;
+            };
+            isDisabled: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            isLoading: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            isActive: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            loadingText: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            iconSpacing: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            leftIcon: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+            rightIcon: {
+                type: import("vue").PropType<Record<string, any>>;
+                required: true;
+            };
+        }>> & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
         __isFragment?: never;
         __isTeleport?: never;
         __isSuspense?: never;
-    } & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    } & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        as: {
+            type: import("vue").PropType<any>;
+            required: true;
+        };
+        to: {
+            type: import("vue").PropType<any>;
+            required: true;
+        };
+        type: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        variant: {
+            type: import("vue").PropType<any>;
+        };
+        isDisabled: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        isLoading: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        isActive: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        loadingText: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        iconSpacing: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        leftIcon: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+        rightIcon: {
+            type: import("vue").PropType<Record<string, any>>;
+            required: true;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: {
             default?(_: {}): any;
         };
@@ -1035,7 +1191,6 @@ declare const _default: {
             $props: {
                 readonly as: unknown;
                 readonly space?: string;
-                style?: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -1079,6 +1234,7 @@ declare const _default: {
                     [key: string]: any;
                 }>) => void)[];
                 class?: unknown;
+                style?: unknown;
             };
             $attrs: {
                 [x: string]: unknown;

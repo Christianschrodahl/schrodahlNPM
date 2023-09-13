@@ -12,10 +12,13 @@ const app = createApp(App)
 app.use(frontendLib, {
     colorMode: 'dark',
     customTheme:{
-        dark:{
+        light:{
             layout:{
                 background: "red"
               },
+            CMainBar:{
+                background: 'blue'
+            }
         }
     }
 })
