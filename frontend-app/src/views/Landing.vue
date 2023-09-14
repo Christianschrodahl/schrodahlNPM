@@ -13,7 +13,7 @@
             <c-card-content v-row:no-margin>
                 <c-text v-col="'xs6'" as="p">{{ pdf.date }}</c-text>
                 <c-button v-if="pdf.confirmed == false" variant="primary" position="absolute" right="10px" top="30%" @click="()=> $router.push('/document?id='+i)" >Åpne dokument</c-button>
-                <c-text  v-else as="p" float="right" :color="'lightblue'">Åpnet</c-text>
+                <c-text  v-else as="p" :color="'lightblue'" position="absolute" right="24px" margin="auto 0px" max-width="min-content" top="30%">Åpnet</c-text>
             </c-card-content>
         </c-card>
         <c-button variant="primary" :leftIcon="PhAlien" :isDisabled="!listOfDocuments.every(d => d.confirmed === true)" @click="()=> $router.push('/signing-method')" >Godkjenn</c-button>

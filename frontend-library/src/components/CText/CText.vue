@@ -31,6 +31,10 @@ const uniqueCompId = generateRandomUniqueID()
 </script>
 <style scoped >
 .CText{
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     width: 100%;
     font-size: v-bind('baseStyles.fontSize');
     margin-bottom: v-bind('baseStyles.marginBottom');
