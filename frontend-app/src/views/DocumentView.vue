@@ -1,13 +1,6 @@
 <template>
     <div class="documentView">
-       <!-- <pdf-viewer as="aside" :currentPdf="testPdf" pageGap="10px" maxSize="100px" :scale="1"/>-->
-        <!--<pdf-viewer as="section" class="documentView__document" maxSize="-webkit-fill-available" v-bind:scale="scale" :currentPdf="testPdf" pageGap="10px"/>-->
-        <!--Aside menu
-        <fullPDFViewer as="aside" :currentPdf="testPdf" pageGap="10px" :scale="1"/>-->
-        <!--Main document
-       <fullPDFViewer as="section" class="documentView__document" :scale="scale" :currentPdf="testPdf" pageGap="10px"/>-->
        <pdfViewer />
-        
         <c-button variant="primary" position="fixed" bottom="10px" right="10px" height="min-content" @click="()=> confirmDoc($router)">confirm</c-button>
     
     </div>

@@ -1,6 +1,7 @@
 <template>
   <c-theme-provider>
     <c-main-bar >
+      <c-button v-if="$route.path !== '/'" @click="$router.go(-1)" variant="primary" >tilbake</c-button>
       <c-container v-row width="100%"  >
       <div v-col:xs="8">LOGO</div>
       <div style="float:right" id="main-bar-action"></div>
