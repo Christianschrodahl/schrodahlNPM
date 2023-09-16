@@ -188,6 +188,7 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
+                readonly rounded?: string | Boolean;
                 readonly type: unknown;
                 readonly as?: any;
                 key?: string | number | symbol;
@@ -300,6 +301,9 @@ declare const _default: {
                     type: import("vue").PropType<Record<string, any>>;
                     required: true;
                 };
+                rounded: {
+                    type: import("vue").PropType<string | Boolean>;
+                };
             }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & {
                 beforeCreate?: (() => void) | (() => void)[];
                 created?: (() => void) | (() => void)[];
@@ -363,6 +367,9 @@ declare const _default: {
                 type: import("vue").PropType<Record<string, any>>;
                 required: true;
             };
+            rounded: {
+                type: import("vue").PropType<string | Boolean>;
+            };
         }>> & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
         __isFragment?: never;
         __isTeleport?: never;
@@ -409,6 +416,9 @@ declare const _default: {
         rightIcon: {
             type: import("vue").PropType<Record<string, any>>;
             required: true;
+        };
+        rounded: {
+            type: import("vue").PropType<string | Boolean>;
         };
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: {

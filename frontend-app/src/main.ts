@@ -12,12 +12,27 @@ const app = createApp(App)
 app.use(frontendLib, {
     colorMode: 'dark',
     customTheme:{
-        light:{
+        dark:{
+            body:{
+                backgroundColor: '#121A12',
+                color: '#E7EAED'
+            },
             layout:{
                 background: "red"
               },
             CMainBar:{
-                background: 'blue'
+                background: '#1D211D'
+            },
+            CButton:{
+                unstyled:{
+                    font:{
+                        base: '#E7DAFF',
+                        _active: 'white',
+                        _hover: 'white',
+                        _focused: 'white'
+                    }
+                }
+                
             }
         }
     }

@@ -17,7 +17,9 @@ const theme = {
     },
     spaces:{
       base: "4px",
-      sm: '4px'
+      sm: '4px',
+      md: '16px 20px',
+      lg: '16px 24px'
     },
     colors: {
       primary: '#007bff',
@@ -25,9 +27,27 @@ const theme = {
       
       // Add more colors and design tokens here
     },
+    text:{
+      m:{
+        size: '18px',
+        bold: '700'
+      },
+      s:{
+        size: '16px',
+        bold: '700'
+      },
+      xs:{
+        size: '14px',
+        bold: '700'
+      },
+      xxs:{
+        size: '12px',
+        bold: '700'
+      }
+    },
     radii:{
         xl: '24px',
-        lg: '16px',
+        lg: '12px',
         md: '8px',
         xs: '2px'
     },
@@ -42,8 +62,14 @@ const theme = {
     }
   };
 
-declare type radii = {
-    md: string
+declare type sizes = {
+    xl: string,
+    lg: string,
+    md: string,
+    sm: string,
+    xs: string,
+    xxs: string,
+    base: string,
 }
 declare type lineHeights = {
     base: string
@@ -52,7 +78,7 @@ declare type lineHeights = {
 export default theme
 export declare type themeProps = {
     colors: any,
-    radii: radii,
+    radii: sizes,
     lineHeights: lineHeights,
     button: any
 }

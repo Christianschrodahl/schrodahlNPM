@@ -1,7 +1,7 @@
 <template>
     <div class="documentView">
        <pdfViewer />
-        <c-button variant="primary" position="fixed" bottom="10px" right="10px" height="min-content" @click="()=> confirmDoc($router)">confirm</c-button>
+        <c-button rounded="xl" variant="primary" position="fixed" bottom="10px" right="10px" height="min-content" @click="()=> confirmDoc($router)">confirm</c-button>
     
     </div>
 </template>
@@ -21,6 +21,9 @@ function confirmDoc(router:any){
 
 </script>
 <style>
+.documentView{
+    padding-top:100px
+}
 /*.documentView {
 display: grid;
 grid-template-columns: repeat(4, 1fr);

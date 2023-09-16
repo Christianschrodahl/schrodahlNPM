@@ -11,10 +11,30 @@ declare const theme: {
     spaces: {
         base: string;
         sm: string;
+        md: string;
+        lg: string;
     };
     colors: {
         primary: string;
         secondary: string;
+    };
+    text: {
+        m: {
+            size: string;
+            bold: string;
+        };
+        s: {
+            size: string;
+            bold: string;
+        };
+        xs: {
+            size: string;
+            bold: string;
+        };
+        xxs: {
+            size: string;
+            bold: string;
+        };
     };
     radii: {
         xl: string;
@@ -32,8 +52,14 @@ declare const theme: {
         bold: string;
     };
 };
-declare type radii = {
+declare type sizes = {
+    xl: string;
+    lg: string;
     md: string;
+    sm: string;
+    xs: string;
+    xxs: string;
+    base: string;
 };
 declare type lineHeights = {
     base: string;
@@ -41,7 +67,7 @@ declare type lineHeights = {
 export default theme;
 export declare type themeProps = {
     colors: any;
-    radii: radii;
+    radii: sizes;
     lineHeights: lineHeights;
     button: any;
 };

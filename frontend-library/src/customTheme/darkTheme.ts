@@ -42,6 +42,20 @@ export default{
             _focused: 'red'
         }
       },
+      unstyled: {
+        bg: {
+          base: 'inherit',
+          _active: 'inherit',
+          _hover: 'inherit',
+          _focused: 'inherit'
+      },
+      font:{
+          base: '#16191D',
+          _active: 'white',
+          _hover: 'white',
+          _focused: 'white'
+      }
+      },
     },
     CAlert: {
       information: {

@@ -11,6 +11,7 @@ interface ButtonProps {
     iconSpacing: Record<string, any>;
     leftIcon: Record<string, any>;
     rightIcon: Record<string, any>;
+    rounded?: string | Boolean;
 }
 declare const buttonProps: ButtonProps;
 export default buttonProps;

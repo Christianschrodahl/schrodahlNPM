@@ -16,10 +16,7 @@ const {as = 'div'} = defineProps<{as: Component | string}>()
 const uniqueCompId = generateRandomUniqueID()
 </script>
 <style scoped>
-div{
-    display: flex;
-}
 .CFlex{
-    
+    display: flex;
 }
 </style>

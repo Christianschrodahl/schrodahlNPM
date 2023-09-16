@@ -1,5 +1,6 @@
 import theme from '@/customTheme/theme'
 import deepMerge from '@/utils/deepMerge'
+import setRoundedValue from '@/utils/setRoundedValue'
 type baseStyle = {
     padding: string,
     letterSpacing: string,
@@ -30,7 +31,7 @@ type bg = {
     _focused: string
 }
 const baseStyles:baseStyle = {
-    padding:"10px 28px",
+    padding:"16px 20px",
     letterSpacing:"0.6px",
     height:"10",
     margin:"5px",
@@ -38,7 +39,7 @@ const baseStyles:baseStyle = {
     fontSize:theme.fontSize.base,
     width: "100%",
     maxWidth: 'fit-content',
-    borderRadius: theme.radii.xl,
+    borderRadius: '0px',
     lineHeight: theme.lineHeights.base,
     fontWeight: theme.fontWeights.bold
 }
@@ -83,13 +84,14 @@ const getVariantStyles = (props: { variant: string, colors:Colors, colorMode: st
       case 'secondary':
         return colorsSetup(props);
       /*case 'tertiary':
-        return tertiaryBtn(props);
+        return tertiaryBtn(props);*/
       case 'unstyled':
-        return unstyledStyle;*/
+        return colorsSetup(props);
       default:
         return colorsSetup(props);
     }
   };
+
 
 
 /**
@@ -100,7 +102,7 @@ const getVariantStyles = (props: { variant: string, colors:Colors, colorMode: st
  */
 const createButtonStyles = (props) => {
     return {
-      ...baseStyles,
+      ...setRoundedValue(props, baseStyles, theme),
       ...getVariantStyles(props),
     }
   }

@@ -10,7 +10,10 @@ export const VRow = {
       if(binding.arg){
         el.classList.add(binding.arg);
       }
-      
+      switch (binding.arg) {
+        case 'nowrap':
+          el.classList.add(`nowrap`);
+      }
       el.classList.add(`row`);
     },
   };

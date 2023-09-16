@@ -8,20 +8,23 @@
           </li>
         </ul>
       </nav>
-      </aside>[[{{ maxPages }}]]
+      </aside>
       <div class="pdf-content" v-for="(page) in maxPages" :key="'page'+page">
         <canvas ref="canvasRefs" :id="'page'+page"></canvas>
       </div>
     </div>
     <Teleport to="#main-bar-action">
-            <c-button variant="primary" @click="scale = scale < 2 ? scale + 0.25 : scale">+</c-button>
-            <span style="color:white;">{{ scale * 100 }}%</span>
-            <c-button variant="primary" @click="scale = scale > 0.25 ? scale - 0.25 : scale">-</c-button>
-        </Teleport>
+      <c-flex as="div" float="right">
+        <c-icon :as="PhMinus" @click="scale = scale < 2 ? scale + 0.25 : scale"></c-icon>
+        <span style="color:white;">{{ scale * 100 }}%</span>
+        <c-icon :as="PhPlus" @click="scale = scale > 0.25 ? scale - 0.25 : scale"></c-icon>
+      </c-flex>
+    </Teleport>
 </template>
 <script setup lang="ts" generic="T">
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.js'
 import * as worker from 'pdfjs-dist/build/pdf.worker.js'
+import {PhPlus, PhMinus} from '@phosphor-icons/vue' 
 import testPdf from '../assets/testPDF.pdf'
 import { onMounted, ref, watch } from "vue";
 pdfjsLib.GlobalWorkerOptions.workerSrc = worker
@@ -56,8 +59,7 @@ async function renderPage(num:number) {
     });
     }
     function goToPage(num:number ) {
-    //pageNum.value = num + 1;
-    //renderPage(pageNum.value);
+    
       window.location.href = '#page'+num
     }
     onMounted(async ()=>{
@@ -104,23 +106,24 @@ flex-wrap: wrap;
 scroll-behavior: smooth;
 }
 .pdf-sidebar{
-    position:static;
+    position:relative;
     overflow: none;
     width: 100%; 
-    max-width:200px;
-    min-width:200px; 
+    max-width:76px;
+    min-width:76px; 
     height: 100%; 
-    min-height: 100%; 
+    min-height: 100%;
+    margin: auto 18px;
     background: #21252C;
+    opacity: 0.4;
     }
 .pdf-sidebar-menu{
   position: fixed;
   width: 100%; 
-    max-width:150px;
-    min-width:150px; 
+  max-width:76px;
+    min-width:76px; 
     height: 100%; 
     min-height: 100%; 
-    overflow: scroll;
     margin: auto;
     padding: auto 20px;
 }
@@ -129,8 +132,8 @@ scroll-behavior: smooth;
   width: 100%;
   height: 100%;
   min-width: -webkit-fill-available;
-  margin: 10px auto;
-  gap: 10px;
+  margin: 0px auto 10px;
+  
   flex: 8;
   display: flex;
   

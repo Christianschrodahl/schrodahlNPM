@@ -22,7 +22,7 @@ export default {
     if(options.customTheme){
       try {
         //if custom theme exist in the project
-        theme = Object.assign(theme, {...options.customTheme[themeMode.value]});
+        theme = deepMerge(theme, options.customTheme[themeMode.value])
       } catch (error) {
         console.error(error)
       }
