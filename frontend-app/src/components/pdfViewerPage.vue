@@ -3,7 +3,7 @@
       <aside class="pdf-sidebar">
         <nav class="pdf-sidebar-menu">
         <ul class="thumbnails">
-          <li v-for="(page, index) in pages" :key="index" @click="goToPage(index)">
+          <li v-for="(page, index) in pages" :key="index" @click="goToPage(index+1)">
                 <img :src="page.thumbnail" alt="Page {{ index + 1 }}" />
           </li>
         </ul>
@@ -59,8 +59,9 @@ async function renderPage(num:number) {
     });
     }
     function goToPage(num:number ) {
-    
-      window.location.href = '#page'+num
+      const el = document.getElementById(`page${num !== null ? num :0}`)
+      el?.scrollIntoView({ behavior: "smooth", block: "end", inline:'end' });
+ 
     }
     onMounted(async ()=>{
     try {

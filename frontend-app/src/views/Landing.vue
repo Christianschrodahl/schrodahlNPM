@@ -1,6 +1,6 @@
 <template>
-    <c-container margin-top="60px">
-        <c-alert v-if="!listOfDocuments.every(d => d.confirmed === true)" variant="information" 
+    <c-container padding-top="100px">
+        <c-alert v-if="!listOfDocuments.every(d => d.confirmed === true)" rounded="xl" variant="information" 
             title="Velkommen til dine dokumenter">
             <c-text as="p">
                 Pass på at du har tid til å fullføre alle signeringsoppgaver du har fått før du lukker vinduet!
@@ -16,6 +16,7 @@
                 <c-text  v-else as="p" :color="'lightblue'" position="absolute" right="24px" margin="auto 0px" max-width="min-content" top="30%">Åpnet</c-text>
             </c-card-content>
         </c-card>
+        <c-button variant="primary" :leftIcon="PhAlien" rounded="xl" :isDisabled="!listOfDocuments.every(d => d.confirmed === true)" @click="()=> $router.push('/signing-method')" >Avslå</c-button>
         <c-button variant="primary" :leftIcon="PhAlien" rounded="xl" :isDisabled="!listOfDocuments.every(d => d.confirmed === true)" @click="()=> $router.push('/signing-method')" >Godkjenn</c-button>
     </c-container>
 </template>

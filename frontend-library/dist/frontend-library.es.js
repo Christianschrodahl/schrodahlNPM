@@ -556,7 +556,6 @@ const G = /* @__PURE__ */ C(we, [["__scopeId", "data-v-ada08437"]]), xe = {
   props: {
     title: {},
     as: {},
-    to: {},
     type: {},
     variant: {},
     isDisabled: {},
@@ -565,7 +564,8 @@ const G = /* @__PURE__ */ C(we, [["__scopeId", "data-v-ada08437"]]), xe = {
     loadingText: {},
     iconSpacing: {},
     leftIcon: {},
-    rightIcon: {}
+    rightIcon: {},
+    rounded: {}
   },
   setup(e) {
     const { variant: t = "information", as: a = "div", ...r } = e;
@@ -756,7 +756,7 @@ const At = /* @__PURE__ */ p({
     };
   }
 });
-const Mt = /* @__PURE__ */ C(kt, [["__scopeId", "data-v-c22d1809"]]), R = { CMainBar: re, CMain: ie, CButton: fe, CCard: ve, CContainer: $e, CCardTitle: pe, CCardContent: be, CText: G, CAlert: pt, CIcon: L, CInput: xt, CForm: At, CFlex: Mt }, q = {
+const Mt = /* @__PURE__ */ C(kt, [["__scopeId", "data-v-fb2850e5"]]), R = { CMainBar: re, CMain: ie, CButton: fe, CCard: ve, CContainer: $e, CCardTitle: pe, CCardContent: be, CText: G, CAlert: pt, CIcon: L, CInput: xt, CForm: At, CFlex: Mt }, q = {
   body: {
     backgroundColor: "white",
     color: "black"

@@ -1,6 +1,6 @@
 <template>
   <c-theme-provider>
-    <c-main-bar position="fixed">
+    <c-main-bar position="fixed" top="0px">
       <c-button v-if="$route.path !== '/'" @click="$router.go(-1)" variant="unstyled" :leftIcon="PhArrowLeft" >tilbake</c-button>
       <c-container v-row:nowrap width="100%"   >
       <div id="logo">LOGO</div>
