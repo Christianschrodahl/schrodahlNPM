@@ -3,7 +3,8 @@
       <aside class="pdf-sidebar">
         <nav class="pdf-sidebar-menu">
         <ul class="thumbnails">
-          <li v-for="(page, index) in pages" :key="index" @click="goToPage(index+1)">
+          <li v-for="(page, index) in pages" :key="index" @click="goToPage(index+1)"
+          :class="{ 'active-page': index + 1 === activePage }">
                 <img :src="page.thumbnail" alt="Page {{ index + 1 }}" />
           </li>
         </ul>
@@ -63,6 +64,18 @@ async function renderPage(num:number) {
       el?.scrollIntoView({ behavior: "smooth", block: "end", inline:'end' });
  
     }
+
+    const activePage = ref<number>(1); // Initialize the active page to the first page
+      function handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Get the page number from the element's ID
+          const pageNumber = parseInt(entry.target.id.substring(4));
+          activePage.value = pageNumber;
+        }
+      });
+    }
+    
     onMounted(async ()=>{
     try {
       const pdfPath = testPdf//"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"; // Replace with your PDF file path
@@ -97,10 +110,46 @@ async function renderPage(num:number) {
     } catch (error) {
       console.error("Error loading PDF:", error);
     }
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5, // Adjust as needed
+  };
+  const observer = new IntersectionObserver(handleIntersection, options);
+
+  // Attach observer to each page element
+  for (let i = 0; i < maxPages.value; i++) {
+    const target = document.getElementById(`page${i + 1}`);
+    if (target) {
+      observer.observe(target);
+    }
+  }
+
   })
 </script>
 <style scoped>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #808080; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; 
+}
 .pdf-viewer {
 display: flex;
 flex-wrap: wrap;
@@ -110,23 +159,24 @@ scroll-behavior: smooth;
     position:relative;
     overflow: none;
     width: 100%; 
-    max-width:76px;
-    min-width:76px; 
+    max-width:100px;
+    min-width:100px; 
     height: 100%; 
     min-height: 100%;
     margin: auto 18px;
     background: #21252C;
-    opacity: 0.4;
     }
 .pdf-sidebar-menu{
   position: fixed;
   width: 100%; 
-  max-width:76px;
-    min-width:76px; 
-    height: 100%; 
-    min-height: 100%; 
-    margin: auto;
-    padding: auto 20px;
+  max-width:100px;
+  min-width:100px; 
+  height: 80%; 
+  min-height: 85%; 
+  margin: auto;
+  scroll-snap-align: start;
+  scroll-margin: 200px;
+  overflow: auto;
 }
 
 .pdf-content { 
@@ -144,6 +194,9 @@ scroll-behavior: smooth;
   margin: auto;
 }
 .thumbnails {
+  width: 76px;
+  max-width: 76px;
+  min-width: 76px;
   list-style-type: none;
   padding: 0;
 }
@@ -151,10 +204,20 @@ scroll-behavior: smooth;
 .thumbnails li {
   cursor: pointer;
   margin-bottom: 10px;
+  opacity: 0.4;
 }
 
 .thumbnails img {
   max-width: 100%;
   border: 1px solid #ddd;
+}
+.thumbnails li.active-page {
+  opacity: 1;
+  color: #fff;
+}
+@media only screen and (max-width: 1024px) {
+  .pdf-sidebar{
+    display: none;
+  }
 }
 </style>

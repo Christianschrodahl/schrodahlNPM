@@ -88,6 +88,7 @@ button {
     -webkit-transition: all 250ms;
     transition: all 250ms;
 }
+
 button:hover {
     background: v-bind('baseStyle._hover.bg');
     color: v-bind('baseStyle._hover.color');

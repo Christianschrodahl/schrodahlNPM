@@ -54,6 +54,7 @@ export default {
     app.provide('theme', theme );
     app.provide('colorMode', themeMode );
     app.config.globalProperties.$toggleTheme = (mode)=>toggleTheme()
+    app.config.globalProperties.$colorMode = themeMode
     //component styleSetup
     const vStyleSetup = {
       beforeMount(el:HTMLElement, binding) {  
@@ -74,9 +75,6 @@ export default {
     for (const prop in components) {
       if (components.hasOwnProperty(prop)) {
         const component = components[prop]
-        if(component.__name === 'CIcon'){
-          console.log("CICON!!", component)
-        }
         //Setting up component styling from theme styling
         if(theme[component.__name]){
           settingUpGlobalStyles(theme, document.head, component)

@@ -188,17 +188,9 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                readonly rounded?: string | Boolean;
+                readonly rounded?: unknown;
                 readonly type: unknown;
                 readonly as?: any;
-                readonly variant?: any;
-                readonly isDisabled: unknown;
-                readonly isLoading: unknown;
-                readonly isActive: unknown;
-                readonly loadingText: unknown;
-                readonly iconSpacing: unknown;
-                readonly leftIcon: unknown;
-                readonly rightIcon: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -243,6 +235,14 @@ declare const _default: {
                 }>) => void)[];
                 class?: unknown;
                 style?: unknown;
+                readonly variant?: any;
+                readonly isDisabled: unknown;
+                readonly isLoading: unknown;
+                readonly isActive: unknown;
+                readonly loadingText: unknown;
+                readonly iconSpacing: unknown;
+                readonly leftIcon: unknown;
+                readonly rightIcon: unknown;
                 readonly to: any;
             };
             $attrs: {
@@ -302,7 +302,7 @@ declare const _default: {
                     required: true;
                 };
                 rounded: {
-                    type: import("vue").PropType<string | Boolean>;
+                    type: import("vue").PropType<Record<string, any>>;
                 };
             }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & {
                 beforeCreate?: (() => void) | (() => void)[];
@@ -368,7 +368,7 @@ declare const _default: {
                 required: true;
             };
             rounded: {
-                type: import("vue").PropType<string | Boolean>;
+                type: import("vue").PropType<Record<string, any>>;
             };
         }>> & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
         __isFragment?: never;
@@ -418,7 +418,7 @@ declare const _default: {
             required: true;
         };
         rounded: {
-            type: import("vue").PropType<string | Boolean>;
+            type: import("vue").PropType<Record<string, any>>;
         };
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: {
@@ -951,18 +951,9 @@ declare const _default: {
             $: import("vue").ComponentInternalInstance;
             $data: {};
             $props: {
-                readonly rounded?: string | Boolean;
+                readonly rounded?: unknown;
                 readonly type: unknown;
-                readonly title: unknown;
                 readonly as: any;
-                readonly variant?: any;
-                readonly isDisabled: unknown;
-                readonly isLoading: unknown;
-                readonly isActive: unknown;
-                readonly loadingText: unknown;
-                readonly iconSpacing: unknown;
-                readonly leftIcon: unknown;
-                readonly rightIcon: unknown;
                 key?: string | number | symbol;
                 ref?: import("vue").VNodeRef;
                 ref_for?: boolean;
@@ -1007,6 +998,15 @@ declare const _default: {
                 }>) => void)[];
                 class?: unknown;
                 style?: unknown;
+                readonly title: unknown;
+                readonly variant?: any;
+                readonly isDisabled: unknown;
+                readonly isLoading: unknown;
+                readonly isActive: unknown;
+                readonly loadingText: unknown;
+                readonly iconSpacing: unknown;
+                readonly leftIcon: unknown;
+                readonly rightIcon: unknown;
             };
             $attrs: {
                 [x: string]: unknown;
@@ -1066,7 +1066,7 @@ declare const _default: {
                     required: true;
                 };
                 rounded: {
-                    type: import("vue").PropType<string | Boolean>;
+                    type: import("vue").PropType<Record<string, any>>;
                 };
             }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & {
                 beforeCreate?: (() => void) | (() => void)[];
@@ -1133,7 +1133,7 @@ declare const _default: {
                 required: true;
             };
             rounded: {
-                type: import("vue").PropType<string | Boolean>;
+                type: import("vue").PropType<Record<string, any>>;
             };
         }>> & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
         __isFragment?: never;
@@ -1184,7 +1184,7 @@ declare const _default: {
             required: true;
         };
         rounded: {
-            type: import("vue").PropType<string | Boolean>;
+            type: import("vue").PropType<Record<string, any>>;
         };
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: {
@@ -1473,6 +1473,162 @@ declare const _default: {
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: {
             default?(_: {}): any;
+        };
+    });
+    CToggle: {
+        new (...args: any[]): {
+            $: import("vue").ComponentInternalInstance;
+            $data: {};
+            $props: {
+                key?: string | number | symbol;
+                ref?: import("vue").VNodeRef;
+                ref_for?: boolean;
+                ref_key?: string;
+                onVnodeBeforeMount?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                onVnodeMounted?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                onVnodeBeforeUpdate?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>, oldVNode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>, oldVNode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                onVnodeUpdated?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>, oldVNode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>, oldVNode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                onVnodeBeforeUnmount?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                onVnodeUnmounted?: ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void) | ((vnode: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+                    [key: string]: any;
+                }>) => void)[];
+                class?: unknown;
+                style?: unknown;
+                readonly size?: String;
+                readonly modelValue: boolean;
+                readonly trueIcon: any;
+                readonly falseIcon: any;
+                "onUpdate:modelValue"?: (value?: unknown) => any;
+            };
+            $attrs: {
+                [x: string]: unknown;
+            };
+            $refs: {
+                [x: string]: unknown;
+            };
+            $slots: Readonly<{
+                [name: string]: import("vue").Slot<any>;
+            }>;
+            $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>;
+            $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>;
+            $emit: (event: "update:modelValue", value?: unknown) => void;
+            $el: any;
+            $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+                modelValue: {
+                    type: import("vue").PropType<boolean>;
+                    required: true;
+                };
+                size: {
+                    type: import("vue").PropType<String>;
+                };
+                trueIcon: {
+                    type: import("vue").PropType<any>;
+                    required: true;
+                };
+                falseIcon: {
+                    type: import("vue").PropType<any>;
+                    required: true;
+                };
+            }>> & {
+                "onUpdate:modelValue"?: (value?: unknown) => any;
+            }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+                "update:modelValue": BooleanConstructor;
+            }, string, {}, {}, string, {}> & {
+                beforeCreate?: (() => void) | (() => void)[];
+                created?: (() => void) | (() => void)[];
+                beforeMount?: (() => void) | (() => void)[];
+                mounted?: (() => void) | (() => void)[];
+                beforeUpdate?: (() => void) | (() => void)[];
+                updated?: (() => void) | (() => void)[];
+                activated?: (() => void) | (() => void)[];
+                deactivated?: (() => void) | (() => void)[];
+                beforeDestroy?: (() => void) | (() => void)[];
+                beforeUnmount?: (() => void) | (() => void)[];
+                destroyed?: (() => void) | (() => void)[];
+                unmounted?: (() => void) | (() => void)[];
+                renderTracked?: ((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[];
+                renderTriggered?: ((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[];
+                errorCaptured?: ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>, info: string) => boolean | void)[];
+            };
+            $forceUpdate: () => void;
+            $nextTick: typeof import("vue").nextTick;
+            $watch<T extends string | ((...args: any) => any)>(source: T, cb: T extends (...args: any) => infer R ? (args_0: R, args_1: R) => any : (...args: any) => any, options?: import("vue").WatchOptions<boolean>): import("vue").WatchStopHandle;
+        } & Readonly<import("vue").ExtractPropTypes<{
+            modelValue: {
+                type: import("vue").PropType<boolean>;
+                required: true;
+            };
+            size: {
+                type: import("vue").PropType<String>;
+            };
+            trueIcon: {
+                type: import("vue").PropType<any>;
+                required: true;
+            };
+            falseIcon: {
+                type: import("vue").PropType<any>;
+                required: true;
+            };
+        }>> & {
+            "onUpdate:modelValue"?: (value?: unknown) => any;
+        } & import("vue").ShallowUnwrapRef<{}> & {} & import("vue").ComponentCustomProperties & {};
+        __isFragment?: never;
+        __isTeleport?: never;
+        __isSuspense?: never;
+    } & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+        modelValue: {
+            type: import("vue").PropType<boolean>;
+            required: true;
+        };
+        size: {
+            type: import("vue").PropType<String>;
+        };
+        trueIcon: {
+            type: import("vue").PropType<any>;
+            required: true;
+        };
+        falseIcon: {
+            type: import("vue").PropType<any>;
+            required: true;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: (value?: unknown) => any;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": BooleanConstructor;
+    }, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+        $slots: {
+            trueIcon?(_: {}): any;
+            falseIcon?(_: {}): any;
         };
     });
 };

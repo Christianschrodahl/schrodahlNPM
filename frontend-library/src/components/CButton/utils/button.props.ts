@@ -14,7 +14,7 @@ interface ButtonProps {
   iconSpacing: Record<string, any>;
   leftIcon: Record<string, any>;
   rightIcon: Record<string, any>;
-  rounded?: string | Boolean
+  rounded?: Record<string, any>
 }
 
 const buttonProps: ButtonProps = {
@@ -64,7 +64,7 @@ const buttonProps: ButtonProps = {
     rounded: {
       type: [Boolean, String] as PropType<boolean|string>,
       default: false
-    }
+  }
   };
   export default buttonProps
   export type {ButtonProps}

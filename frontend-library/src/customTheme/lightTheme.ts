@@ -5,8 +5,8 @@ export default{
       // Add more global styles here
     },
     CMainBar:{
-      background: "pink",
-      color:"red"
+      background: "rgb(6 6 6 / 5%)",
+      color:"black",
     },
     CCard:{
       background: '#ffffff',
@@ -42,6 +42,20 @@ export default{
             _focused: 'red'
         }
       },
+      unstyled: {
+        bg: {
+          base: 'inherit',
+          _active: 'inherit',
+          _hover: 'inherit',
+          _focused: 'inherit'
+      },
+      font:{
+        base: '#16191D',
+        _active: 'white',
+        _hover: 'white',
+        _focused: 'white'
+    }
+    }
       
     },CAlert: {
       information: {

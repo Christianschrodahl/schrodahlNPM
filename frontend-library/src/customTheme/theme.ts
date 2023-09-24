@@ -63,13 +63,13 @@ const theme = {
   };
 
 declare type sizes = {
-    xl: string,
-    lg: string,
-    md: string,
-    sm: string,
-    xs: string,
-    xxs: string,
-    base: string,
+    xl?: string,
+    lg?: string,
+    md?: string,
+    sm?: string,
+    xs?: string,
+    xxs?: string,
+    base?: string,
 }
 declare type lineHeights = {
     base: string
@@ -77,8 +77,10 @@ declare type lineHeights = {
 
 export default theme
 export declare type themeProps = {
-    colors: any,
-    radii: sizes,
-    lineHeights: lineHeights,
-    button: any
+    colors?: any,
+    radii?: sizes,
+    lineHeights?: lineHeights,
+    button?: any,
+    breakpoints?: sizes,
+    spaces?: sizes
 }

@@ -9,8 +9,9 @@ import {store} from '@/vuex/store'
 
 
 const app = createApp(App)
+const darkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
 app.use(frontendLib, {
-    colorMode: 'dark',
+    colorMode: darkMode ? 'dark': 'light',
     customTheme:{
         dark:{
             body:{
@@ -34,7 +35,8 @@ app.use(frontendLib, {
                 }
                 
             }
-        }
+        },
+        light:{}
     }
 })
 app.use(router)

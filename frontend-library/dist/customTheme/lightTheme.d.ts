@@ -41,6 +41,20 @@ declare const _default: {
                 _focused: string;
             };
         };
+        unstyled: {
+            bg: {
+                base: string;
+                _active: string;
+                _hover: string;
+                _focused: string;
+            };
+            font: {
+                base: string;
+                _active: string;
+                _hover: string;
+                _focused: string;
+            };
+        };
     };
     CAlert: {
         information: {
