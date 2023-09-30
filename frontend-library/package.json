@@ -1,6 +1,6 @@
 {
-  "name": "schrodahl-library",
-  "private": true,
+  "name": "@christiansch/nor-ui",
+  "private": false,
   "version": "0.0.1",
   "type": "module",
   "files": [
