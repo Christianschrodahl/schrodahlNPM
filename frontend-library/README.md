@@ -61,7 +61,26 @@ You can alose override default element type for each component.
 `<c-text as="p">some text</c-text>`
 `<c-text as="span">some text</c-text>`
 # forms
+How to use form with validation
 
+```
+<template>
+<c-form ref="form">
+            <c-input v-model="input" label="email" type="email" :rules="[v => !!v && v.length ==2 || 'field required']"/>
+            <c-button variant="primary" @click="submit">submit</c-button>
+        </c-form>
+</template>
+<script setup lang="ts">
+import {ref} from 'vue'
+const input = ref('')
+const form = ref(null)
+function submit(){
+    if(await form.value.validation() === true){
+       console.log("SUCCESS", input)
+    }
+}
+</script>
+```
 
 
 
