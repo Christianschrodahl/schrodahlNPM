@@ -1,26 +1,43 @@
 <template>
-  <div class="form-box">
-        <input class="form-input" type="text" required
-               minlength="6"
+  <div class="form-box" v-style-setup="$.type, $attrs, uniqueCompId" :data-id="uniqueCompId" v-if="renderComponent">
+        <input class="form-input" type="text" :value="modelValue" @input="updateValue"  required :isInvalid="error === true || typeof error === 'string'"
                placeholder="tester">
-        <label for="" class="label">tester </label>
-        <span class="error">Field Required</span>
+        <label :for="id" class="label">tester </label>
+        <span class="error" v-if="!!error && typeof error === 'string'" >Field Required</span>
       </div>
 </template>
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import {inputSettings} from './utils/input.composables.ts'
 import type {inputProps} from "./utils/input.props"
-import {watch, ref} from 'vue'
+import {watch, toRefs, Ref, inject} from 'vue'
+import generateRandomUniqueID from '@/utils/uniqueID';
+import {forceRerender, renderComponent} from '@/utils/forceRerender'
 const props = defineProps<inputProps>()
 const { error, validate } = inputSettings(props)
-let emit = defineEmits(["input"])
-let modelValue = ref(props.modelValue)
+let emit = defineEmits(["input", "update:modelValue"])
+let {modelValue} = toRefs(props)
 watch(modelValue, (v)=>{
         emit("input", v)
         if(props.rules){
             validate(v)
         }
     })
+  const updateValue = (event) => {
+    emit('update:modelValue', event.target.value)
+  }
+//move this to the global file
+interface currentTheme {
+  [key: string]: any
+}
+const theme:currentTheme = inject('theme')
+const colorMode:Ref<string> = inject('colorMode')
+watch(()=>colorMode.value,(v)=>{
+    forceRerender()
+})
+
+
+const uniqueCompId = generateRandomUniqueID()
+//ADD VARIANT LOGIC
 </script>
 <style>
 
@@ -61,12 +78,12 @@ span.error{
   display:block;
   transform: translateX(4px) translateY(-20px);
 }
-
+/*
 .form-input:invalid:required {
   background-image: linear-gradient(to right, pink, lightgreen);
 }
 
 .form-input:valid{
   background-image: linear-gradient(to right, green, lightgreen);
-}
+}*/
 </style>

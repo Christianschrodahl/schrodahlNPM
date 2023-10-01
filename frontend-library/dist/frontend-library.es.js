@@ -1,4 +1,4 @@
-import { defineComponent as p, useCssVars as B, inject as v, computed as y, resolveDirective as $, withDirectives as w, openBlock as u, createElementBlock as f, unref as c, renderSlot as g, createBlock as m, resolveDynamicComponent as A, withCtx as S, ref as k, watch as V, createCommentVNode as Z, nextTick as G, mergeProps as J, createElementVNode as h, createTextVNode as X, toDisplayString as Y, toRefs as ee, onMounted as te, reactive as ae } from "vue";
+import { defineComponent as p, useCssVars as V, inject as v, computed as y, resolveDirective as $, withDirectives as w, openBlock as u, createElementBlock as f, unref as c, renderSlot as g, createBlock as m, resolveDynamicComponent as I, withCtx as Z, ref as A, watch as B, createCommentVNode as M, nextTick as G, mergeProps as J, createElementVNode as h, createTextVNode as Y, toDisplayString as ee, toRefs as K, onMounted as te, reactive as ae } from "vue";
 function T() {
   const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let t = "";
@@ -8,44 +8,44 @@ function T() {
   }
   return t;
 }
-const oe = ["data-id"], se = /* @__PURE__ */ p({
+const oe = ["data-id"], re = /* @__PURE__ */ p({
   __name: "CMainBar",
   setup(e) {
-    var r, l;
-    B((s) => ({
+    var s, l;
+    V((r) => ({
       "78077ec2": a.background,
       "06082152": a.color
     }));
     const t = v("theme"), a = {
-      background: (r = t == null ? void 0 : t.CMainBar) == null ? void 0 : r.background,
+      background: (s = t == null ? void 0 : t.CMainBar) == null ? void 0 : s.background,
       color: (l = t == null ? void 0 : t.CMainBar) == null ? void 0 : l.color
     }, o = T();
     return y({
       get() {
         return t.CMainBar;
       },
-      set(s) {
-        return s;
+      set(r) {
+        return r;
       }
-    }), (s, i) => {
+    }), (r, i) => {
       const n = $("style-setup");
       return w((u(), f("header", {
         "data-id": c(o),
         class: "CMainBar"
       }, [
-        g(s.$slots, "default", {}, void 0, !0)
+        g(r.$slots, "default", {}, void 0, !0)
       ], 8, oe)), [
-        [n, s.$.type, s.$attrs, c(o)]
+        [n, r.$.type, r.$attrs, c(o)]
       ]);
     };
   }
 });
 const b = (e, t) => {
   const a = e.__vccOpts || e;
-  for (const [o, r] of t)
-    a[o] = r;
+  for (const [o, s] of t)
+    a[o] = s;
   return a;
-}, re = /* @__PURE__ */ b(se, [["__scopeId", "data-v-f40a194a"]]);
+}, se = /* @__PURE__ */ b(re, [["__scopeId", "data-v-f40a194a"]]);
 var ne = {}, le = { class: "CMain" };
 function ie(e, t) {
   var a = $("style-setup");
@@ -55,7 +55,7 @@ function ie(e, t) {
     [a, e.$.type, e.$attrs]
   ]);
 }
-const ce = /* @__PURE__ */ b(ne, [["render", ie], ["__scopeId", "data-v-994719c5"]]), I = {
+const ce = /* @__PURE__ */ b(ne, [["render", ie], ["__scopeId", "data-v-994719c5"]]), x = {
   breakpoints: {
     lg: "1620px",
     md: "1240px",
@@ -116,23 +116,23 @@ function z(e, t) {
     t.hasOwnProperty(o) && (t[o] && t[o].constructor === Object ? a[o] && a[o].constructor === Object ? a[o] = z(a[o], t[o]) : a[o] = { ...t[o] } : a[o] = t[o]);
   return a;
 }
-const de = (e) => ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"].includes(e) === !0, K = (e, t, a) => {
-  var r;
+const de = (e) => ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"].includes(e) === !0, Q = (e, t, a) => {
+  var s;
   let o = t;
-  return e.rounded === void 0 || (typeof (e == null ? void 0 : e.rounded) == "boolean" && (e == null ? void 0 : e.rounded) === !0 || ((r = e == null ? void 0 : e.rounded) == null ? void 0 : r.length) === 0 ? o.borderRadius = a.radii.lg : de(e == null ? void 0 : e.rounded) ? o.borderRadius = a.radii[e == null ? void 0 : e.rounded] : o.borderRadius = e == null ? void 0 : e.rounded), o;
+  return e.rounded === void 0 || (typeof (e == null ? void 0 : e.rounded) == "boolean" && (e == null ? void 0 : e.rounded) === !0 || ((s = e == null ? void 0 : e.rounded) == null ? void 0 : s.length) === 0 ? o.borderRadius = a.radii.lg : de(e == null ? void 0 : e.rounded) ? o.borderRadius = a.radii[e == null ? void 0 : e.rounded] : o.borderRadius = e == null ? void 0 : e.rounded), o;
 }, ue = {
   padding: "16px 20px",
   letterSpacing: "0.6px",
   height: "10",
   margin: "5px",
   textAlign: "center",
-  fontSize: I.fontSize.base,
+  fontSize: x.fontSize.base,
   width: "100%",
   maxWidth: "fit-content",
   borderRadius: "0px",
-  lineHeight: I.lineHeights.base,
-  fontWeight: I.fontWeights.bold
-}, j = ({ colors: e, colorMode: t, additionalStyling: a }) => {
+  lineHeight: x.lineHeights.base,
+  fontWeight: x.fontWeights.bold
+}, L = ({ colors: e, colorMode: t, additionalStyling: a }) => {
   let o = {
     light: {
       bg: e.bg.base,
@@ -161,16 +161,16 @@ const de = (e) => ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"].includes(e) === !
 }, _e = (e) => {
   switch (e.variant) {
     case "primary":
-      return j(e);
+      return L(e);
     case "secondary":
-      return j(e);
+      return L(e);
     case "unstyled":
-      return j(e);
+      return L(e);
     default:
-      return j(e);
+      return L(e);
   }
 }, q = (e) => ({
-  ...K(e, ue, I),
+  ...Q(e, ue, x),
   ..._e(e)
 }), fe = /* @__PURE__ */ p({
   __name: "CIcon",
@@ -181,22 +181,22 @@ const de = (e) => ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"].includes(e) === !
   setup(e) {
     const t = T();
     return (a, o) => {
-      const r = $("style-setup");
-      return w((u(), m(A(a.as), {
+      const s = $("style-setup");
+      return w((u(), m(I(a.as), {
         "data-id": c(t),
         class: "CIcon"
       }, {
-        default: S(() => [
+        default: Z(() => [
           g(a.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [r, a.$.type, a.$attrs, c(t)]
+        [s, a.$.type, a.$attrs, c(t)]
       ]);
     };
   }
 });
-const L = /* @__PURE__ */ b(fe, [["__scopeId", "data-v-dab21008"]]), he = /* @__PURE__ */ p({
+const j = /* @__PURE__ */ b(fe, [["__scopeId", "data-v-dab21008"]]), he = /* @__PURE__ */ p({
   __name: "CButton",
   props: {
     as: {},
@@ -214,7 +214,7 @@ const L = /* @__PURE__ */ b(fe, [["__scopeId", "data-v-dab21008"]]), he = /* @__
   },
   setup(e) {
     const { variant: t = "primary", as: a = "button", ...o } = e;
-    B((d) => ({
+    V((d) => ({
       "7ee69889": c(n).lineHeight,
       b20a46fa: c(n).padding,
       "4e24f7a2": c(n).letterSpacing,
@@ -231,40 +231,40 @@ const L = /* @__PURE__ */ b(fe, [["__scopeId", "data-v-dab21008"]]), he = /* @__
       "36b71388": c(n)._hover.bg,
       "42dd3d40": c(n)._hover.color
     })), console.log(a);
-    const r = v("theme"), l = v("colorMode"), s = T();
+    const s = v("theme"), l = v("colorMode"), r = T();
     let i = y({
       get() {
-        return r.CButton[t];
+        return s.CButton[t];
       },
       set(d) {
         return d;
       }
-    }), n = k(q({ ...o, colors: i.value, colorMode: l.value }));
-    return V(() => r, (d) => {
+    }), n = A(q({ ...o, colors: i.value, colorMode: l.value }));
+    return B(() => s, (d) => {
       n.value = q({ ...o, colors: i.value, colorMode: l.value });
     }, { deep: !0 }), (d, _) => {
       const C = $("style-setup");
-      return w((u(), m(A(d.as ?? "button"), {
-        "data-id": c(s),
+      return w((u(), m(I(d.as ?? "button"), {
+        "data-id": c(r),
         class: "CButton",
         disabled: d.isDisabled
       }, {
-        default: S(() => [
-          d.leftIcon ? (u(), m(L, {
+        default: Z(() => [
+          d.leftIcon ? (u(), m(j, {
             key: 0,
             as: d.leftIcon,
             "margin-right": "8px"
-          }, null, 8, ["as"])) : Z("", !0),
+          }, null, 8, ["as"])) : M("", !0),
           g(d.$slots, "default", {}, void 0, !0),
-          d.rightIcon ? (u(), m(L, {
+          d.rightIcon ? (u(), m(j, {
             key: 1,
             as: d.rightIcon,
             "margin-left": "8px"
-          }, null, 8, ["as"])) : Z("", !0)
+          }, null, 8, ["as"])) : M("", !0)
         ]),
         _: 3
       }, 8, ["data-id", "disabled"])), [
-        [C, d.$.type, d.$attrs, c(s)]
+        [C, d.$.type, d.$attrs, c(r)]
       ]);
     };
   }
@@ -275,24 +275,24 @@ const ve = /* @__PURE__ */ b(he, [["__scopeId", "data-v-ad27d1d9"]]), ge = /* @_
     as: {}
   },
   setup(e) {
-    B((r) => ({
+    V((s) => ({
       "6f7ac7bf": a.borderRadius
     }));
     const a = {
       borderRadius: v("theme").radii.lg
     }, o = T();
-    return (r, l) => {
-      const s = $("style-setup");
-      return w((u(), m(A("div"), {
+    return (s, l) => {
+      const r = $("style-setup");
+      return w((u(), m(I("div"), {
         "data-id": c(o),
         class: "CCard"
       }, {
-        default: S(() => [
-          g(r.$slots, "default", {}, void 0, !0)
+        default: Z(() => [
+          g(s.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [s, r.$.type, r.$attrs, c(o)]
+        [r, s.$.type, s.$attrs, c(o)]
       ]);
     };
   }
@@ -303,7 +303,7 @@ const pe = /* @__PURE__ */ b(ge, [["__scopeId", "data-v-d073c29f"]]), me = /* @_
     as: {}
   },
   setup(e) {
-    B((r) => ({
+    V((s) => ({
       "64e4ddeb": t.fontWeight,
       19608798: t.fontSize
     })), v("theme");
@@ -312,27 +312,27 @@ const pe = /* @__PURE__ */ b(ge, [["__scopeId", "data-v-d073c29f"]]), me = /* @_
       fontSize: "18px"
     };
     function a() {
-      const r = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       let l = "";
-      for (let s = 0; s < 6; s++) {
-        const i = Math.floor(Math.random() * r.length);
-        l += r.charAt(i);
+      for (let r = 0; r < 6; r++) {
+        const i = Math.floor(Math.random() * s.length);
+        l += s.charAt(i);
       }
       return l;
     }
     const o = a();
-    return (r, l) => {
-      const s = $("style-setup");
-      return w((u(), m(A("h3"), {
+    return (s, l) => {
+      const r = $("style-setup");
+      return w((u(), m(I("h3"), {
         "data-id": c(o),
         class: "CCardTitle"
       }, {
-        default: S(() => [
-          g(r.$slots, "default", {}, void 0, !0)
+        default: Z(() => [
+          g(s.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [s, r.$.type, r.$attrs, c(o)]
+        [r, s.$.type, s.$attrs, c(o)]
       ]);
     };
   }
@@ -345,8 +345,8 @@ const ye = /* @__PURE__ */ b(me, [["__scopeId", "data-v-27df9289"]]), be = /* @_
   setup(e) {
     return v("theme"), (t, a) => {
       const o = $("style-setup");
-      return w((u(), m(A("div"), { class: "CCardContent" }, {
-        default: S(() => [
+      return w((u(), m(I("div"), { class: "CCardContent" }, {
+        default: Z(() => [
           g(t.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
@@ -361,19 +361,19 @@ const Ce = /* @__PURE__ */ b(be, [["__scopeId", "data-v-0f0761fc"]]), $e = ["dat
   setup(e) {
     const t = T();
     return (a, o) => {
-      const r = $("style-setup");
+      const s = $("style-setup");
       return w((u(), f("section", {
         "data-id": c(t),
         class: "CContainer"
       }, [
         g(a.$slots, "default", {}, void 0, !0)
       ], 8, $e)), [
-        [r, a.$.type, a.$attrs, c(t)]
+        [s, a.$.type, a.$attrs, c(t)]
       ]);
     };
   }
 });
-const ke = /* @__PURE__ */ b(we, [["__scopeId", "data-v-ba427fa7"]]), E = k(!0), xe = async () => {
+const ke = /* @__PURE__ */ b(we, [["__scopeId", "data-v-ba427fa7"]]), E = A(!0), xe = async () => {
   E.value = !1, await G(), E.value = !0;
 }, Ie = /* @__PURE__ */ p({
   __name: "CText",
@@ -382,48 +382,48 @@ const ke = /* @__PURE__ */ b(we, [["__scopeId", "data-v-ba427fa7"]]), E = k(!0),
   },
   setup(e) {
     var l;
-    B((s) => ({
+    V((r) => ({
       "3a617175": o.value.fontSize,
       "52c4977e": o.value.marginBottom
     }));
-    const t = v("theme"), a = v("colorMode"), o = k({
+    const t = v("theme"), a = v("colorMode"), o = A({
       fontSize: "16px",
       color: (l = t == null ? void 0 : t.body) == null ? void 0 : l.color,
       marginBottom: t.spaces.sm
     });
-    V(() => a.value, (s) => {
+    B(() => a.value, (r) => {
       xe();
     });
-    const r = T();
-    return (s, i) => {
+    const s = T();
+    return (r, i) => {
       const n = $("style-setup");
-      return c(E) ? w((u(), m(A(s.as), {
+      return c(E) ? w((u(), m(I(r.as), {
         key: 0,
-        "data-id": c(r),
+        "data-id": c(s),
         class: "CText"
       }, {
-        default: S(() => [
-          g(s.$slots, "default", {}, void 0, !0)
+        default: Z(() => [
+          g(r.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [n, s.$.type, s.$attrs, c(r)]
-      ]) : Z("", !0);
+        [n, r.$.type, r.$attrs, c(s)]
+      ]) : M("", !0);
     };
   }
 });
-const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
+const X = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
   padding: "10px 16px",
   letterSpacing: "0.6px",
   height: "10",
   margin: "5px",
   textAlign: "center",
-  fontSize: I.fontSize.base,
+  fontSize: x.fontSize.base,
   width: "100%",
   maxWidth: "fit-content",
-  borderRadius: I.radii.xs,
-  lineHeight: I.lineHeights.base,
-  fontWeight: I.fontWeights.bold
+  borderRadius: x.radii.xs,
+  lineHeight: x.lineHeights.base,
+  fontWeight: x.fontWeights.bold
 }, O = ({ colors: e, colorMode: t, additionalStyling: a }) => {
   let o = {
     light: {
@@ -460,17 +460,17 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
       return O(e);
   }
 }, W = (e) => ({
-  ...K(e, Ae, I),
+  ...Q(e, Ae, x),
   ...Me(e)
-}), Se = ["width", "height", "fill", "transform"], Ze = { key: 0 }, Te = /* @__PURE__ */ h("path", { d: "M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z" }, null, -1), Be = [
+}), Se = ["width", "height", "fill", "transform"], Ze = { key: 0 }, Te = /* @__PURE__ */ h("path", { d: "M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z" }, null, -1), Ve = [
   Te
-], Ve = { key: 1 }, ze = /* @__PURE__ */ h("path", {
+], Be = { key: 1 }, ze = /* @__PURE__ */ h("path", {
   d: "M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z",
   opacity: "0.2"
-}, null, -1), De = /* @__PURE__ */ h("path", { d: "M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z" }, null, -1), je = [
+}, null, -1), De = /* @__PURE__ */ h("path", { d: "M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z" }, null, -1), Le = [
   ze,
   De
-], Le = { key: 2 }, Oe = /* @__PURE__ */ h("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" }, null, -1), Re = [
+], je = { key: 2 }, Oe = /* @__PURE__ */ h("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" }, null, -1), Re = [
   Oe
 ], Ee = { key: 3 }, qe = /* @__PURE__ */ h("path", { d: "M172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z" }, null, -1), We = [
   qe
@@ -497,7 +497,7 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
     }
   },
   setup(e) {
-    const t = e, a = v("weight", "regular"), o = v("size", "1em"), r = v("color", "currentColor"), l = v("mirrored", !1), s = y(() => t.weight ?? a), i = y(() => t.size ?? o), n = y(() => t.color ?? r), d = y(() => t.mirrored !== void 0 ? t.mirrored ? "scale(-1, 1)" : void 0 : l ? "scale(-1, 1)" : void 0);
+    const t = e, a = v("weight", "regular"), o = v("size", "1em"), s = v("color", "currentColor"), l = v("mirrored", !1), r = y(() => t.weight ?? a), i = y(() => t.size ?? o), n = y(() => t.color ?? s), d = y(() => t.mirrored !== void 0 ? t.mirrored ? "scale(-1, 1)" : void 0 : l ? "scale(-1, 1)" : void 0);
     return (_, C) => (u(), f("svg", J({
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 256 256",
@@ -507,7 +507,7 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
       transform: d.value
     }, _.$attrs), [
       g(_.$slots, "default"),
-      s.value === "bold" ? (u(), f("g", Ze, Be)) : s.value === "duotone" ? (u(), f("g", Ve, je)) : s.value === "fill" ? (u(), f("g", Le, Re)) : s.value === "light" ? (u(), f("g", Ee, We)) : s.value === "regular" ? (u(), f("g", Pe, Ne)) : s.value === "thin" ? (u(), f("g", He, Ge)) : Z("", !0)
+      r.value === "bold" ? (u(), f("g", Ze, Ve)) : r.value === "duotone" ? (u(), f("g", Be, Le)) : r.value === "fill" ? (u(), f("g", je, Re)) : r.value === "light" ? (u(), f("g", Ee, We)) : r.value === "regular" ? (u(), f("g", Pe, Ne)) : r.value === "thin" ? (u(), f("g", He, Ge)) : M("", !0)
     ], 16, Se));
   }
 }), Qe = ["width", "height", "fill", "transform"], Xe = { key: 0 }, Ye = /* @__PURE__ */ h("path", { d: "M108,84a16,16,0,1,1,16,16A16,16,0,0,1,108,84Zm128,44A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Zm-72,36.68V132a20,20,0,0,0-20-20,12,12,0,0,0-4,23.32V168a20,20,0,0,0,20,20,12,12,0,0,0,4-23.32Z" }, null, -1), et = [
@@ -515,10 +515,10 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
 ], tt = { key: 1 }, at = /* @__PURE__ */ h("path", {
   d: "M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z",
   opacity: "0.2"
-}, null, -1), ot = /* @__PURE__ */ h("path", { d: "M144,176a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176Zm88-48A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128ZM124,96a12,12,0,1,0-12-12A12,12,0,0,0,124,96Z" }, null, -1), st = [
+}, null, -1), ot = /* @__PURE__ */ h("path", { d: "M144,176a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176Zm88-48A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128ZM124,96a12,12,0,1,0-12-12A12,12,0,0,0,124,96Z" }, null, -1), rt = [
   at,
   ot
-], rt = { key: 2 }, nt = /* @__PURE__ */ h("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-4,48a12,12,0,1,1-12,12A12,12,0,0,1,124,72Zm12,112a16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40a8,8,0,0,1,0,16Z" }, null, -1), lt = [
+], st = { key: 2 }, nt = /* @__PURE__ */ h("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-4,48a12,12,0,1,1-12,12A12,12,0,0,1,124,72Zm12,112a16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40a8,8,0,0,1,0,16Z" }, null, -1), lt = [
   nt
 ], it = { key: 3 }, ct = /* @__PURE__ */ h("path", { d: "M142,176a6,6,0,0,1-6,6,14,14,0,0,1-14-14V128a2,2,0,0,0-2-2,6,6,0,0,1,0-12,14,14,0,0,1,14,14v40a2,2,0,0,0,2,2A6,6,0,0,1,142,176ZM124,94a10,10,0,1,0-10-10A10,10,0,0,0,124,94Zm106,34A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z" }, null, -1), dt = [
   ct
@@ -545,7 +545,7 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
     }
   },
   setup(e) {
-    const t = e, a = v("weight", "regular"), o = v("size", "1em"), r = v("color", "currentColor"), l = v("mirrored", !1), s = y(() => t.weight ?? a), i = y(() => t.size ?? o), n = y(() => t.color ?? r), d = y(() => t.mirrored !== void 0 ? t.mirrored ? "scale(-1, 1)" : void 0 : l ? "scale(-1, 1)" : void 0);
+    const t = e, a = v("weight", "regular"), o = v("size", "1em"), s = v("color", "currentColor"), l = v("mirrored", !1), r = y(() => t.weight ?? a), i = y(() => t.size ?? o), n = y(() => t.color ?? s), d = y(() => t.mirrored !== void 0 ? t.mirrored ? "scale(-1, 1)" : void 0 : l ? "scale(-1, 1)" : void 0);
     return (_, C) => (u(), f("svg", J({
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: "0 0 256 256",
@@ -555,7 +555,7 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
       transform: d.value
     }, _.$attrs), [
       g(_.$slots, "default"),
-      s.value === "bold" ? (u(), f("g", Xe, et)) : s.value === "duotone" ? (u(), f("g", tt, st)) : s.value === "fill" ? (u(), f("g", rt, lt)) : s.value === "light" ? (u(), f("g", it, dt)) : s.value === "regular" ? (u(), f("g", ut, ft)) : s.value === "thin" ? (u(), f("g", ht, gt)) : Z("", !0)
+      r.value === "bold" ? (u(), f("g", Xe, et)) : r.value === "duotone" ? (u(), f("g", tt, rt)) : r.value === "fill" ? (u(), f("g", st, lt)) : r.value === "light" ? (u(), f("g", it, dt)) : r.value === "regular" ? (u(), f("g", ut, ft)) : r.value === "thin" ? (u(), f("g", ht, gt)) : M("", !0)
     ], 16, Qe));
   }
 }), yt = /* @__PURE__ */ p({
@@ -576,21 +576,21 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
   },
   setup(e) {
     const { variant: t = "information", as: a = "div", ...o } = e;
-    B((_) => ({
+    V((_) => ({
       c33effc8: c(n).bg,
       "7fef982c": c(n).color,
       "3f29cef5": c(n).borderRadius
     }));
-    const r = v("theme"), l = v("colorMode"), s = T();
+    const s = v("theme"), l = v("colorMode"), r = T();
     let i = y({
       get() {
-        return r.CAlert[t];
+        return s.CAlert[t];
       },
       set(_) {
         return _;
       }
-    }), n = k(W({ ...o, colors: i.value, colorMode: l.value }));
-    V(() => r, (_) => {
+    }), n = A(W({ ...o, colors: i.value, colorMode: l.value }));
+    B(() => s, (_) => {
       n.value = W({ ...o, colors: i.value, colorMode: l.value });
     }, { deep: !0 });
     let d = y({
@@ -607,43 +607,43 @@ const Q = /* @__PURE__ */ b(Ie, [["__scopeId", "data-v-587f514f"]]), Ae = {
       }
     });
     return (_, C) => {
-      const M = $("style-setup");
-      return w((u(), m(A("div"), {
-        "data-id": c(s),
+      const S = $("style-setup");
+      return w((u(), m(I("div"), {
+        "data-id": c(r),
         class: "CAlert"
       }, {
-        default: S(() => [
-          c(d) ? (u(), m(L, {
+        default: Z(() => [
+          c(d) ? (u(), m(j, {
             key: 0,
             as: c(d),
             "margin-right": "12px",
             size: "24px"
-          }, null, 8, ["as"])) : Z("", !0),
+          }, null, 8, ["as"])) : M("", !0),
           h("div", null, [
-            _.title ? (u(), m(Q, {
+            _.title ? (u(), m(X, {
               key: 0,
               as: "h4"
             }, {
-              default: S(() => [
-                X(Y(_.title), 1)
+              default: Z(() => [
+                Y(ee(_.title), 1)
               ]),
               _: 1
-            })) : Z("", !0),
+            })) : M("", !0),
             g(_.$slots, "default", {}, void 0, !0)
           ])
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [M, _.$.type, _.$attrs, c(s)]
+        [S, _.$.type, _.$attrs, c(r)]
       ]);
     };
   }
 });
 const bt = /* @__PURE__ */ b(yt, [["__scopeId", "data-v-b23a0a48"]]);
 function Ct(e) {
-  let t = k();
+  let t = A();
   function a(l) {
-    if (!e.rules)
+    if (console.log("VALIDATE"), !e.rules)
       return;
     const i = e.rules.map((n) => {
       const d = n(l);
@@ -661,38 +661,29 @@ function Ct(e) {
     }
     return t.value === !1;
   }
-  function o(l, s) {
-    if (l === s)
+  function o(l, r) {
+    if (l === r)
       return !0;
-    if (l instanceof Date && s instanceof Date && l.getTime() !== s.getTime() || l !== Object(l) || s !== Object(s))
+    if (l instanceof Date && r instanceof Date && l.getTime() !== r.getTime() || l !== Object(l) || r !== Object(r))
       return !1;
     const i = Object.keys(l);
-    return i.length !== Object.keys(s).length ? !1 : i.every((n) => o(l[n], s[n]));
+    return i.length !== Object.keys(r).length ? !1 : i.every((n) => o(l[n], r[n]));
   }
-  const { rules: r } = ee(e);
-  return V(() => r, (l, s) => {
-    o(l, s) || a();
+  const { rules: s } = K(e);
+  return B(() => s, (l, r) => {
+    o(l, r) || a();
   }, { deep: !0 }), te(() => {
     a();
   }), { validate: a, error: t };
 }
-const $t = { class: "form-box" }, wt = /* @__PURE__ */ h("input", {
-  class: "form-input",
-  type: "text",
-  required: "",
-  minlength: "6",
-  placeholder: "tester"
-}, null, -1), kt = /* @__PURE__ */ h("label", {
-  for: "",
-  class: "label"
-}, "tester ", -1), xt = /* @__PURE__ */ h("span", { class: "error" }, "Field Required", -1), It = [
-  wt,
-  kt,
-  xt
-], At = /* @__PURE__ */ p({
+const $t = { class: "form-box" }, wt = ["value", "isInvalid"], kt = ["for"], xt = {
+  key: 0,
+  class: "error"
+}, It = /* @__PURE__ */ p({
   __name: "CInput",
   props: {
     modelValue: {},
+    minlength: {},
     name: {},
     placeholder: {},
     icon: {},
@@ -701,46 +692,65 @@ const $t = { class: "form-box" }, wt = /* @__PURE__ */ h("input", {
     type: {},
     id: {}
   },
-  emits: ["input"],
+  emits: ["input", "update:modelValue"],
   setup(e, { emit: t }) {
-    const a = e, { error: o, validate: r } = Ct(a);
-    let l = k(a.modelValue);
-    return V(l, (s) => {
-      t("input", s), a.rules && r(s);
-    }), (s, i) => (u(), f("div", $t, It));
+    const a = e, { error: o, validate: s } = Ct(a);
+    let { modelValue: l } = K(a);
+    B(l, (i) => {
+      t("input", i), a.rules && s(i);
+    });
+    const r = (i) => {
+      t("update:modelValue", i.target.value);
+    };
+    return (i, n) => (u(), f("div", $t, [
+      h("input", {
+        class: "form-input",
+        type: "text",
+        value: c(l),
+        onInput: r,
+        required: "",
+        isInvalid: c(o) === !0 || typeof c(o) == "string",
+        placeholder: "tester"
+      }, null, 40, wt),
+      h("label", {
+        for: i.id,
+        class: "label"
+      }, "tester ", 8, kt),
+      c(o) && typeof c(o) == "string" ? (u(), f("span", xt, "Field Required")) : M("", !0)
+    ]));
   }
 });
-const Mt = /* @__PURE__ */ p({
+const At = /* @__PURE__ */ p({
   __name: "CForm",
   setup(e, { expose: t }) {
-    const a = k(), o = k(!1), r = y({
+    const a = A(), o = A(!1), s = y({
       get() {
-        var s, i, n, d;
+        var r, i, n, d;
         if (o.value) {
-          const _ = [], C = (s = a.value) == null ? void 0 : s.elements;
-          for (let M = 0; M < C.length; M++) {
-            const x = C[M];
-            (i = x == null ? void 0 : x.__vue__) != null && i.isInvalid && ((n = x.__vue__) == null ? void 0 : n.isInvalid) === !0 && _.push(!0), !x.__vue__ == null && ((d = x.validity) == null ? void 0 : d.valid) !== !0 && _.push(!0);
+          const _ = [], C = (r = a.value) == null ? void 0 : r.elements;
+          for (let S = 0; S < C.length; S++) {
+            const k = C[S];
+            (i = k == null ? void 0 : k.__vue__) != null && i.isInvalid && ((n = k.__vue__) == null ? void 0 : n.isInvalid) === !0 && _.push(!0), !k.__vue__ == null && ((d = k.validity) == null ? void 0 : d.valid) !== !0 && _.push(!0);
           }
           return o.value = !1, _.length === 0;
         }
         return o.value = !1, !1;
       },
-      set(s) {
-        return s;
+      set(r) {
+        return r;
       }
     });
     async function l() {
-      return o.value = !0, await G(), r.value;
+      return o.value = !0, await G(), s.value;
     }
-    return t({ validation: l }), (s, i) => (u(), f("form", {
+    return t({ validation: l }), (r, i) => (u(), f("form", {
       ref_key: "form",
       ref: a
     }, [
-      g(s.$slots, "default")
+      g(r.$slots, "default")
     ], 512));
   }
-}), St = /* @__PURE__ */ p({
+}), Mt = /* @__PURE__ */ p({
   __name: "CFlex",
   props: {
     as: {}
@@ -748,30 +758,30 @@ const Mt = /* @__PURE__ */ p({
   setup(e) {
     const t = T();
     return (a, o) => {
-      const r = $("style-setup");
-      return w((u(), m(A(a.as), {
+      const s = $("style-setup");
+      return w((u(), m(I(a.as), {
         "data-id": c(t),
         class: "CFlex"
       }, {
-        default: S(() => [
+        default: Z(() => [
           g(a.$slots, "default", {}, void 0, !0)
         ]),
         _: 3
       }, 8, ["data-id"])), [
-        [r, a.$.type, a.$attrs, c(t)]
+        [s, a.$.type, a.$attrs, c(t)]
       ]);
     };
   }
 });
-const Zt = /* @__PURE__ */ b(St, [["__scopeId", "data-v-fb2850e5"]]), Tt = ["data-id"], Bt = ["checked"], Vt = { class: "CToggle__switch" }, zt = {
+const St = /* @__PURE__ */ b(Mt, [["__scopeId", "data-v-fb2850e5"]]), Zt = ["data-id"], Tt = ["checked"], Vt = { class: "CToggle__switch" }, Bt = {
   key: 0,
   class: "CToggle__switch__slider",
   "data-switch": "true"
-}, Dt = {
+}, zt = {
   key: 1,
   class: "CToggle__switch__slider",
   "data-switch": "false"
-}, jt = /* @__PURE__ */ p({
+}, Dt = /* @__PURE__ */ p({
   __name: "CToggle",
   props: {
     modelValue: { type: Boolean },
@@ -782,18 +792,18 @@ const Zt = /* @__PURE__ */ b(St, [["__scopeId", "data-v-fb2850e5"]]), Tt = ["dat
   emits: { "update:modelValue": Boolean },
   setup(e, { emit: t }) {
     const a = e;
-    B((n) => ({
+    V((n) => ({
       "64fe3614": i.value()
     }));
-    let o = k(a.modelValue);
-    const r = T();
+    let o = A(a.modelValue);
+    const s = T();
     function l() {
       o.value = !o.value, t("update:modelValue", o.value);
     }
-    function s(n) {
+    function r(n) {
       t("update:modelValue", !n.target.checked);
     }
-    const i = k(() => {
+    const i = A(() => {
       switch (a.size) {
         case "xl":
           return "75px";
@@ -808,7 +818,7 @@ const Zt = /* @__PURE__ */ b(St, [["__scopeId", "data-v-fb2850e5"]]), Tt = ["dat
     return (n, d) => {
       const _ = $("style-setup");
       return w((u(), f("div", {
-        "data-id": c(r),
+        "data-id": c(s),
         class: "CToggle",
         onClick: l
       }, [
@@ -816,24 +826,24 @@ const Zt = /* @__PURE__ */ b(St, [["__scopeId", "data-v-fb2850e5"]]), Tt = ["dat
           type: "checkbox",
           class: "CToggle__input--hidden",
           checked: c(o),
-          onInput: s
-        }, null, 40, Bt),
+          onInput: r
+        }, null, 40, Tt),
         h("div", Vt, [
-          c(o) ? (u(), f("span", zt, [
-            n.trueIcon ? (u(), m(A(n.trueIcon), { key: 0 })) : Z("", !0),
+          c(o) ? (u(), f("span", Bt, [
+            n.trueIcon ? (u(), m(I(n.trueIcon), { key: 0 })) : M("", !0),
             g(n.$slots, "trueIcon", {}, void 0, !0)
-          ])) : (u(), f("span", Dt, [
-            n.trueIcon ? (u(), m(A(n.falseIcon), { key: 0 })) : Z("", !0),
+          ])) : (u(), f("span", zt, [
+            n.trueIcon ? (u(), m(I(n.falseIcon), { key: 0 })) : M("", !0),
             g(n.$slots, "falseIcon", {}, void 0, !0)
           ]))
         ])
-      ], 8, Tt)), [
-        [_, n.$.type, n.$attrs, c(r)]
+      ], 8, Zt)), [
+        [_, n.$.type, n.$attrs, c(s)]
       ]);
     };
   }
 });
-const Lt = /* @__PURE__ */ b(jt, [["__scopeId", "data-v-33d2dfa1"]]), R = { CMainBar: re, CMain: ce, CButton: ve, CCard: pe, CContainer: ke, CCardTitle: ye, CCardContent: Ce, CText: Q, CAlert: bt, CIcon: L, CInput: At, CForm: Mt, CFlex: Zt, CToggle: Lt }, P = {
+const Lt = /* @__PURE__ */ b(Dt, [["__scopeId", "data-v-33d2dfa1"]]), R = { CMainBar: se, CMain: ce, CButton: ve, CCard: pe, CContainer: ke, CCardTitle: ye, CCardContent: Ce, CText: X, CAlert: bt, CIcon: j, CInput: It, CForm: At, CFlex: St, CToggle: Lt }, P = {
   body: {
     backgroundColor: "white",
     color: "black"
@@ -1059,98 +1069,98 @@ const Lt = /* @__PURE__ */ b(jt, [["__scopeId", "data-v-33d2dfa1"]]), R = { CMai
 };
 async function N(e, t) {
   return Object.entries(e).map(([a, o]) => {
-    const r = Rt(a);
-    return r in t.style ? [r, o] : !1;
+    const s = Ot(a);
+    return s in t.style ? [s, o] : !1;
   }).filter(Boolean);
 }
-async function Ot(e) {
+async function jt(e) {
   const t = document.createElement("style");
   document.head.appendChild(t);
   const a = t.sheet;
   for (let o = 0; o < e.length; o++) {
-    let r = 1, l = e[o], s = l[0], i = "";
-    Array.isArray(l[1][0]) && (l = l[1], r = 0);
-    for (let n = l.length; r < n; r++) {
-      const d = l[r];
+    let s = 1, l = e[o], r = l[0], i = "";
+    Array.isArray(l[1][0]) && (l = l[1], s = 0);
+    for (let n = l.length; s < n; s++) {
+      const d = l[s];
       i += `${d[0]}: ${d[1]}${d[2] ? " !important" : ""};
 `;
     }
     a.insertRule(
-      `${s}{${i}}`,
+      `${r}{${i}}`,
       a.cssRules.length
     );
   }
 }
-function Rt(e) {
+function Ot(e) {
   return e.replace(/[A-Z]/g, (t) => `-${t.toLowerCase()}`);
 }
-async function H(e, t, a, o, r) {
+async function H(e, t, a, o, s) {
   let l = await N(a, o);
-  r === "dark" && a.dark && (l = [...l, ...await N(a.dark, o)]), await Ot([[`${t}[${e}]`, l]]), Object.entries(a).forEach(([s, i]) => {
-    (o.style.hasOwnProperty(s) && !(s in o) || s === "dark") && o.removeAttribute(s);
+  s === "dark" && a.dark && (l = [...l, ...await N(a.dark, o)]), await jt([[`${t}[${e}]`, l]]), Object.entries(a).forEach(([r, i]) => {
+    (o.style.hasOwnProperty(r) && !(r in o) || r === "dark") && o.removeAttribute(r);
   });
 }
 function U(e) {
-  const t = (a, o, r) => {
-    typeof r == "string" ? document.documentElement.style.setProperty(
+  const t = (a, o, s) => {
+    typeof s == "string" ? document.documentElement.style.setProperty(
       `--${a}-${o}`,
-      r
-    ) : typeof r == "object" && Object.entries(r).forEach(([l, s]) => {
+      s
+    ) : typeof s == "object" && Object.entries(s).forEach(([l, r]) => {
       l.startsWith("_") ? t(
         a,
         `${o}${l}`,
-        s
+        r
       ) : t(
         `${a}-${o}`,
         l,
-        s
+        r
       );
     });
   };
   Object.entries(e).forEach(([a, o]) => {
-    Object.entries(o).forEach(([r, l]) => {
-      t(a, r, l);
+    Object.entries(o).forEach(([s, l]) => {
+      t(a, s, l);
     });
   });
 }
-function Et(e, t, a) {
+function Rt(e, t, a) {
   const o = document.createElement("style");
   o.setAttribute("type", "text/css");
-  const r = a.__scopeId ? `[${a.__scopeId}]` : "", l = a.__name, s = (i, n) => {
+  const s = a.__scopeId ? `[${a.__scopeId}]` : "", l = a.__name, r = (i, n) => {
     const d = [];
     return Object.entries(n).forEach(([_, C]) => {
-      const M = _.startsWith("_") ? `${i}${_}` : `${i}-${_}`;
+      const S = _.startsWith("_") ? `${i}${_}` : `${i}-${_}`;
       if (typeof C == "object" && !Array.isArray(C) && !_.startsWith("_")) {
-        const x = s(M, C);
-        d.push(...x);
+        const k = r(S, C);
+        d.push(...k);
       } else if (_.startsWith("_")) {
-        const x = _.split("-").find((D) => D.indexOf("_") !== -1);
-        d.push(`.${l}${r}${x.replace("_", ":")} { ${Object.entries(C).map(([D]) => `${D}:var(--${M}-${D})`).join(";")}}`);
+        const k = _.split("-").find((D) => D.indexOf("_") !== -1);
+        d.push(`.${l}${s}${k.replace("_", ":")} { ${Object.entries(C).map(([D]) => `${D}:var(--${S}-${D})`).join(";")}}`);
       } else
-        d.push(`.${l}${r} { ${_}:var(--${M}) }`);
+        d.push(`.${l}${s} { ${_}:var(--${S}) }`);
     }), d;
   };
   Object.entries(e[a.__name]).forEach(([i, n]) => {
-    const d = s(a.__name, { [i]: n });
-    qt(d).forEach((_) => {
+    const d = r(a.__name, { [i]: n });
+    Et(d).forEach((_) => {
       o.textContent += `${_} `;
     });
   }), t.appendChild(o);
 }
-function qt(e) {
+function Et(e) {
   const t = {};
   return e.forEach((a) => {
     const o = a.match(/(.+?)\s*{([^}]+)}/);
     if (o) {
-      const [r, l] = o.slice(1);
-      t[r] || (t[r] = []), t[r].push(l.trim());
+      const [s, l] = o.slice(1);
+      t[s] || (t[s] = []), t[s].push(l.trim());
     }
   }), Object.entries(t).map(([a, o]) => {
-    const r = o.join("; ");
-    return `${a} { ${r} }`;
+    const s = o.join("; ");
+    return `${a} { ${s} }`;
   });
 }
-const Wt = {
+const qt = {
   beforeMount(e, t) {
     switch (t == null || t.value, t.arg && e.classList.add(t.arg), t.arg) {
       case "nowrap":
@@ -1158,7 +1168,7 @@ const Wt = {
     }
     e.classList.add("row");
   }
-}, Pt = {
+}, Wt = {
   beforeMount(e, t) {
     const a = t == null ? void 0 : t.value;
     switch (t.arg && !parseInt(a) && console.error("Using directive 'arguments' and 'breakpoints' in value not ALLOWED", `arg:${t.arg}, value: ${a}. Either remove the 'Argument' or 'Breakpoint' from the directive.`), t.arg) {
@@ -1178,45 +1188,45 @@ const Wt = {
     e.classList.add(`col-${a}`);
   }
 };
-var Ft = {};
-function Nt(e, t) {
+var Pt = {};
+function Ft(e, t) {
   return g(e.$slots, "default");
 }
-const Ht = /* @__PURE__ */ b(Ft, [["render", Nt]]), Gt = {
+const Nt = /* @__PURE__ */ b(Pt, [["render", Ft]]), Ut = {
   install: (e, t) => {
-    const a = k(t != null && t.colorMode ? t.colorMode : "dark");
-    let o = ae(z(I, a.value === "dark" ? F : P));
+    const a = A(t != null && t.colorMode ? t.colorMode : "dark");
+    let o = ae(z(x, a.value === "dark" ? F : P));
     if (t.customTheme)
       try {
         o = z(o, t.customTheme[a.value]);
-      } catch (s) {
-        console.error(s);
+      } catch (r) {
+        console.error(r);
       }
     U(o);
-    function r() {
+    function s() {
       a.value === "light" ? (a.value = "dark", console.log("darkmode"), o = Object.assign(o, { ...F })) : (console.log("lightMode"), a.value = "light", o = Object.assign(o, { ...P }));
     }
-    V(a, (s) => {
+    B(a, (r) => {
       U(o);
-    }), e.provide("theme", o), e.provide("colorMode", a), e.config.globalProperties.$toggleTheme = (s) => r(), e.config.globalProperties.$colorMode = a;
+    }), e.provide("theme", o), e.provide("colorMode", a), e.config.globalProperties.$toggleTheme = (r) => s(), e.config.globalProperties.$colorMode = a;
     const l = {
-      beforeMount(s, i) {
+      beforeMount(r, i) {
         var n;
-        H(`data-id="${i.modifiers ?? ((n = i.value) == null ? void 0 : n.__scopeId)}"`, s.tagName.toLowerCase(), i.arg, s, a.value);
+        H(`data-id="${i.modifiers ?? ((n = i.value) == null ? void 0 : n.__scopeId)}"`, r.tagName.toLowerCase(), i.arg, r, a.value);
       },
-      beforeUpdate(s, i) {
+      beforeUpdate(r, i) {
         var n;
-        H(`data-id="${i.modifiers ?? ((n = i.value) == null ? void 0 : n.__scopeId)}"`, s.tagName.toLowerCase(), i.arg, s, a.value);
+        H(`data-id="${i.modifiers ?? ((n = i.value) == null ? void 0 : n.__scopeId)}"`, r.tagName.toLowerCase(), i.arg, r, a.value);
       }
     };
-    e.directive("styleSetup", l), e.directive("row", Wt), e.directive("col", Pt), e.component("CThemeProvider", Ht);
-    for (const s in R)
-      if (R.hasOwnProperty(s)) {
-        const i = R[s];
-        o[i.__name] && Et(o, document.head, i), e.component(i.__name ?? s, i);
+    e.directive("styleSetup", l), e.directive("row", qt), e.directive("col", Wt), e.component("CThemeProvider", Nt);
+    for (const r in R)
+      if (R.hasOwnProperty(r)) {
+        const i = R[r];
+        o[i.__name] && Rt(o, document.head, i), e.component(i.__name ?? r, i);
       }
   }
 };
 export {
-  Gt as default
+  Ut as default
 };

@@ -3,7 +3,7 @@
         <slot />
     </form>
 </template>
-<script setup lang="ts" generic="T">
+<script setup lang="ts" >
 import {ref, computed, nextTick} from 'vue'
 const form = ref()
 const startValidation = ref(false)

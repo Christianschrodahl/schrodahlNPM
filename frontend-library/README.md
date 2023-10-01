@@ -16,3 +16,53 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+
+# setup
+1. Go to you Main file and import library
+   `import norUI from '@christiansch/nor-ui'`
+   `import '@christiansch/nor-ui/dist/frontend-library.css'`
+2. use the new library and create your own theme 
+   ```app.use(norUI, {
+         colorMode: 'light',
+         customTheme:{
+            dark: {
+               body:{
+                backgroundColor: '#121A12',
+                color: '#E7EAED'
+               },
+               layout:{
+                  background: "red"
+               },
+               CMainBar:{
+                  background: '#1D211D'
+               },
+            },
+            light: {
+               ...
+            }
+         }
+      })
+   ```
+
+# How to use components:
+
+`<c-button variant="primary">CLICK</c-button>`
+
+If you need custom styling where you use it you can assign it by writing CSS directly to the component.
+it will not be inline css
+`<c-text color="red" padding="2rem">some text</c-text>`
+
+You can also assign darkmode styling.
+This library use lightmode as default so if you want to have different styling on darkmode you need use the "dark" attribute
+`<c-text color="red" padding="2rem" :dark="{ color: 'blue', padding: '2px'}">some text</c-text>`
+
+You can alose override default element type for each component. 
+`<c-text as="p">some text</c-text>`
+`<c-text as="span">some text</c-text>`
+# forms
+
+
+
+
+

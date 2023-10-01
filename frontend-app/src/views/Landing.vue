@@ -22,6 +22,10 @@
         </c-card>
         <c-button variant="primary" :leftIcon="PhAlien" rounded="xl" :isDisabled="!listOfDocuments.every(d => d.confirmed === true)" @click="()=> $router.push('/signing-method')" >Avslå</c-button>
         <c-button variant="primary" :leftIcon="PhAlien" rounded="xl" :isDisabled="!listOfDocuments.every(d => d.confirmed === true)" @click="()=> $router.push('/signing-method')" >Godkjenn</c-button>
+        <c-form ref="form">
+            <c-input v-model="input" label="email" type="email" :rules="[v => !!v && v.length ==2 || 'field required']"></c-input >
+            <c-button variant="primary" @click="submit">submit</c-button>
+        </c-form>
     </c-container>
 </template>
 <script setup lang="ts">
@@ -30,7 +34,13 @@ import { ref } from 'vue';
 import { useStore } from 'vuex'
 import {PhAlien} from '@phosphor-icons/vue'
 const store = useStore()
-
+const input = ref('')
+const form = ref(null)
+async function submit(v){
+    if(await form.value.validation() === true){
+       console.log("SUCCESS", input)
+    }
+}
 const listOfDocuments = ref<PdfDocument[]>(store.state.documents.map((obj:PdfDocument) => ({
   title: obj.title,
   url: obj.url,

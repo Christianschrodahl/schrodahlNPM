@@ -3,6 +3,7 @@ export function inputSettings (props){
     let error = ref()
     
     function validate(v?:any){
+        console.log("VALIDATE")
         if(!props.rules) return
         const isInvalid = props.rules.map(r => {
             const validator = r(v)
