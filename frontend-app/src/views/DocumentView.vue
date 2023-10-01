@@ -7,7 +7,7 @@
 </template>
 <script setup lang="ts">
 import {useStore} from 'vuex'
-import fullPDFViewer from '@/components/fullPDFViewer.vue';
+//import fullPDFViewer from '@/components/fullPDFViewer.vue';
 import pdfViewer from '@/components/pdfViewerPage.vue';
 import testPdf from '../assets/testPDF.pdf'
 //import pdfViewer2 from '@/components/pdfViewer2.vue';

@@ -40,13 +40,17 @@ async function addStylesheetRules(rules: string[]|Array<any>):Promise<void> {
   function convertToCssProperty(property:string):string {
     return property.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
   }
-export async function setCustomStyleFromAttr(scopeId:string, elementName: string, attrs: Object, el:HTMLElement):Promise<void> {
-  const generateRule = await convertAttrToStyling(attrs, el)
+export async function setCustomStyleFromAttr(scopeId:string, elementName: string, attrs: Object, el:HTMLElement, colorMode: string):Promise<void> {
+  
+  let generateRule = await convertAttrToStyling(attrs, el)
+  if(colorMode === 'dark' && attrs['dark']){
+    generateRule = [...generateRule , ...await convertAttrToStyling(attrs['dark'], el)]
+  }
   await addStylesheetRules([[`${elementName}[${scopeId}]`,generateRule]])
   
   // remmove css atributs in the dom element
   Object.entries(attrs).forEach(([k,v]) =>{
-    if( el.style.hasOwnProperty(k) && !(k in el)){
+    if( (el.style.hasOwnProperty(k) && !(k in el)) || k === 'dark'){
         el.removeAttribute(k)
     }    
   })

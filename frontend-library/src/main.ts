@@ -58,11 +58,11 @@ export default {
     //component styleSetup
     const vStyleSetup = {
       beforeMount(el:HTMLElement, binding) {  
-        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el)
+        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el, themeMode.value)
       },
       beforeUpdate(el, binding) {
         //WE MIGHT NEED TO CHANGE THIS BECAUSE THIS WILL TRIGGER FROM PARENT EVENT
-        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el)
+        setCustomStyleFromAttr(`data-id="${binding.modifiers ?? binding.value?.__scopeId}"`, el.tagName.toLowerCase(), binding.arg, el, themeMode.value)
       },
     }
     app.directive("styleSetup", vStyleSetup)

@@ -2,12 +2,16 @@
     <c-container padding-top="100px">
         <c-alert v-if="!listOfDocuments.every(d => d.confirmed === true)" rounded="xl" variant="information" 
             title="Velkommen til dine dokumenter">
-            <c-text as="p">
+            <c-text as="p" :dark="{
+                color: 'blue'
+            }" color="red">
                 Pass på at du har tid til å fullføre alle signeringsoppgaver du har fått før du lukker vinduet!
             </c-text>
         </c-alert>
         <c-alert v-else variant="success">Alle dokumentene er åpnet og du er klar til å signere</c-alert>
-       <c-text as="span" color="white" padding="16px">Nye dokumenter til signering</c-text>
+       <c-text as="span"  :dark="{
+                color: 'blue'
+            }" color="red" padding="16px">Nye dokumenter til signering</c-text>
         <c-card v-for="(pdf,i) in listOfDocuments" :key="'pdf'+i"  border="solid 1px lightblue!important">
             <c-card-title>{{ pdf.title }}</c-card-title>
             <c-card-content v-row:no-margin>
