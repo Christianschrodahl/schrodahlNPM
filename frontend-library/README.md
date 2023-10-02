@@ -82,6 +82,14 @@ function submit(){
 </script>
 ```
 
+# drawing
+```
+<template>
+ <c-draw ref="currentCanvas" :lineWidth="0.1" format="image/jpeg" drawColor="#000000"></c-draw>
+<template>
+```
+Exposed events: clearCanvas, isDrawingValid
+
 
 
 

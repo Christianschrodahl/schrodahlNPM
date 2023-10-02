@@ -12,6 +12,10 @@ declare const _default: {
         color: string;
         'border-color': string;
     };
+    CDraw: {
+        border: string;
+        background: string;
+    };
     CButton: {
         primary: {
             bg: {

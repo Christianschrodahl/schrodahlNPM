@@ -57,6 +57,10 @@ export default{
       }
       },
     },
+    CDraw:{
+      border: 'solid 1pd #000000',
+      background: "#cdcdcd"
+    },
     CAlert: {
       information: {
         bg: {

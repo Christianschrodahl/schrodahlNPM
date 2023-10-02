@@ -26,6 +26,9 @@
             <c-input v-model="input" label="email" type="email" :rules="[v => !!v && v.length ==2 || 'field required']"></c-input >
             <c-button variant="primary" @click="submit">submit</c-button>
         </c-form>
+        <c-flex as="div" height="120px" margin="20px">
+            <c-draw ref="currentCanvas" :lineWidth="0.1"></c-draw>
+        </c-flex>
     </c-container>
 </template>
 <script setup lang="ts">
@@ -35,12 +38,14 @@ import { useStore } from 'vuex'
 import {PhAlien} from '@phosphor-icons/vue'
 const store = useStore()
 const input = ref('')
+const currentCanvas= ref()
 const form = ref(null)
 async function submit(v){
     if(await form.value.validation() === true){
        console.log("SUCCESS", input)
     }
 }
+console.log("currentC", currentCanvas)
 const listOfDocuments = ref<PdfDocument[]>(store.state.documents.map((obj:PdfDocument) => ({
   title: obj.title,
   url: obj.url,

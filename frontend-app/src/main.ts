@@ -24,6 +24,9 @@ app.use(frontendLib, {
             CMainBar:{
                 background: '#1D211D'
             },
+            CDraw:{
+                
+            },
             CButton:{
                 unstyled:{
                     font:{
@@ -36,7 +39,11 @@ app.use(frontendLib, {
                 
             }
         },
-        light:{}
+        light:{
+            CDraw:{
+                
+            },
+        }
     }
 })
 app.use(router)

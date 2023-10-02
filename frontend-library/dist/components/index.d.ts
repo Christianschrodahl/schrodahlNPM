@@ -1747,5 +1747,36 @@ declare const _default: {
             falseIcon?(_: {}): any;
         };
     });
+    CDraw: import("vue").DefineComponent<{
+        currentColor: {
+            type: import("vue").PropType<"#000000">;
+            required: true;
+        };
+        lineWidth: {
+            type: import("vue").PropType<1>;
+            required: true;
+        };
+        format: {
+            type: import("vue").PropType<"image/jpeg">;
+            required: true;
+        };
+    }, {
+        submitDrawing: () => void;
+        isDrawingValid: () => boolean;
+        clearCanvas: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+        currentColor: {
+            type: import("vue").PropType<"#000000">;
+            required: true;
+        };
+        lineWidth: {
+            type: import("vue").PropType<1>;
+            required: true;
+        };
+        format: {
+            type: import("vue").PropType<"image/jpeg">;
+            required: true;
+        };
+    }>>, {}, {}>;
 };
 export default _default;

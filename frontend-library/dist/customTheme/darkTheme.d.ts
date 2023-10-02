@@ -56,6 +56,10 @@ declare const _default: {
             };
         };
     };
+    CDraw: {
+        border: string;
+        background: string;
+    };
     CAlert: {
         information: {
             bg: {

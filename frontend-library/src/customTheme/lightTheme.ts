@@ -13,6 +13,10 @@ export default{
       color: '#000000',
       'border-color': '#7bbaff'
     },
+    CDraw:{
+      border: 'solid 1pd #000000',
+      background: "#cdcdcd"
+    },
     CButton: {
       primary: {
         bg: {
