@@ -3,4 +3,5 @@ frontend-app/dist/*
 frontend-library/node_modules/*
 frontend-library/src/components/CAlert/utils
 frontend-library/dist/*
+/**/dist/*
 

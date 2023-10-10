@@ -2,7 +2,10 @@
 <canvas v-if="renderComponent" 
     ref="canvas" 
     v-style-setup="$.type, $attrs, uniqueCompId" 
-    :data-id="uniqueCompId" 
+    :data-id="uniqueCompId"
+    @touchstart="startDrawing"
+    @touchmove="draw"
+    @touchend="stopDrawing"
     @mousedown="startDrawing" 
     @mousemove="draw" 
     @mouseup="stopDrawing" class="CDraw"></canvas>
@@ -48,7 +51,8 @@ const uniqueCompId = generateRandomUniqueID()
   
   const points = ref([]);
 
-  const startDrawing = (event: MouseEvent) => {
+  const startDrawing = (e: MouseEvent | TouchEvent) => {
+  const event = e instanceof MouseEvent ? e : e.touches[0]
   const c = canvas.value;
   const rect = c.getBoundingClientRect();
   const aspectRatio = c.width / c.height;
@@ -72,7 +76,8 @@ const uniqueCompId = generateRandomUniqueID()
   points.value.push({ x, y });
 };
 
-const draw = (event: MouseEvent) => {
+const draw = (e: MouseEvent | TouchEvent) => {
+  const event = e instanceof MouseEvent ? e : e.touches[0]
   if (!isDrawing.value) return;
   const c = canvas.value;
   const rect = c.getBoundingClientRect();
@@ -130,13 +135,7 @@ const draw = (event: MouseEvent) => {
     console.log(canvasRef,drawingSize)
     return drawingSize >= minDrawingSize;
   };
-  onMounted(()=>{
-    console.log("LOGGING CANVAS REF",canvas)
-    const c = document.querySelector('.CDraw')
-    c.addEventListener('touchstart', startDrawing)
-    c.addEventListener('touchmove', draw)
-    c.addEventListener('touchend', stopDrawing)
-  })
+  
   defineExpose({submitDrawing, isDrawingValid, clearCanvas})
   </script>
   
@@ -147,6 +146,6 @@ const draw = (event: MouseEvent) => {
     border: v-bind('baseStyles.border');
     background: v-bind('baseStyles.background');
     border-radius: v-bind('baseStyles.borderRadius');
-    
+    touch-action: none;
   }
   </style>

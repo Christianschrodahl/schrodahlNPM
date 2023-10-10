@@ -12,7 +12,7 @@ import type {ButtonProps} from './utils/button.props'
 import CIcon from '../CIcon/CIcon.vue';
 import generateRandomUniqueID from '@/utils/uniqueID';
 const {variant= 'primary', as='button', ...prop} = defineProps<ButtonProps>()
-console.log(as)
+
 interface MyObject {
   [key: string]: any;
 }

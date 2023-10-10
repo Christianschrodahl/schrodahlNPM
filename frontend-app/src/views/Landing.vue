@@ -28,6 +28,7 @@
         </c-form>
         <c-flex as="div" height="120px" margin="20px">
             <c-draw ref="currentCanvas" :lineWidth="0.1"></c-draw>
+            <c-button variant="secondary" @click="resetCanvas">reset</c-button>
         </c-flex>
     </c-container>
 </template>
@@ -45,7 +46,11 @@ async function submit(v){
        console.log("SUCCESS", input)
     }
 }
-console.log("currentC", currentCanvas)
+
+function resetCanvas(){
+    
+    currentCanvas.value.clearCanvas()
+}
 const listOfDocuments = ref<PdfDocument[]>(store.state.documents.map((obj:PdfDocument) => ({
   title: obj.title,
   url: obj.url,
