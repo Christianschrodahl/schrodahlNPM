@@ -13,6 +13,11 @@ const darkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
 app.use(frontendLib, {
     colorMode: darkMode ? 'light': 'light',
     customTheme:{
+        default:{
+            radii: {
+                xl: '1px'
+            }
+        },
         dark:{
             body:{
                 backgroundColor: '#121A12',

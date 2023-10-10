@@ -9,7 +9,7 @@
 </template>
   
 <script setup lang="ts">
-import { Ref, inject, ref, watch } from 'vue';
+import { Ref, inject, ref, watch, onMounted } from 'vue';
 import generateRandomUniqueID from '@/utils/uniqueID';
 import {forceRerender, renderComponent} from '@/utils/forceRerender'
 
@@ -130,6 +130,13 @@ const draw = (event: MouseEvent) => {
     console.log(canvasRef,drawingSize)
     return drawingSize >= minDrawingSize;
   };
+  onMounted(()=>{
+    console.log("LOGGING CANVAS REF",canvas)
+    const c = document.querySelector('.CDraw')
+    c.addEventListener('touchstart', startDrawing)
+    c.addEventListener('touchmove', draw)
+    c.addEventListener('touchend', stopDrawing)
+  })
   defineExpose({submitDrawing, isDrawingValid, clearCanvas})
   </script>
   

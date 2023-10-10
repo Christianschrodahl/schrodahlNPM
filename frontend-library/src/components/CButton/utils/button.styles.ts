@@ -1,6 +1,11 @@
-import theme from '@/customTheme/theme'
 import deepMerge from '@/utils/deepMerge'
 import setRoundedValue from '@/utils/setRoundedValue'
+import type { themeProps } from '@/customTheme/theme';
+import { inject } from 'vue';
+
+
+//const theme: themeProps = inject('theme')
+
 type baseStyle = {
     padding: string,
     letterSpacing: string,
@@ -30,18 +35,8 @@ type bg = {
     _active: string,
     _focused: string
 }
-const baseStyles:baseStyle = {
-    padding:"16px 20px",
-    letterSpacing:"0.6px",
-    height:"10",
-    margin:"5px",
-    textAlign: 'center',
-    fontSize:theme.fontSize.base,
-    width: "100%",
-    maxWidth: 'fit-content',
-    borderRadius: '0px',
-    lineHeight: theme.lineHeights.base,
-    fontWeight: theme.fontWeights.bold
+let baseStyles:Partial<baseStyle> = {
+    
 }
 
 const colorsSetup = ({ colors, colorMode, additionalStyling }: { colors: Colors; colorMode: string, additionalStyling:Record<string,string> }) => {
@@ -100,7 +95,19 @@ const getVariantStyles = (props: { variant: string, colors:Colors, colorMode: st
  * @returns {Object} Style object to be passed to styled component
  * @todo Pass the `theme` from the ThemeProvider context. Will need to create a context provider for theme.
  */
-const createButtonStyles = (props) => {
+const createButtonStyles = (props, theme: themeProps) => {
+    baseStyles = {
+    padding:"16px 20px",
+    letterSpacing:"0.6px",
+    height:"10",
+    margin:"5px",
+    textAlign: 'center',
+    fontSize:theme.fontSize.base,
+    width: "100%",
+    maxWidth: 'fit-content',
+    borderRadius: '0px',
+    lineHeight: theme.lineHeights.base,
+    fontWeight: theme.fontWeights.bold}
     return {
       ...setRoundedValue(props, baseStyles, theme),
       ...getVariantStyles(props),

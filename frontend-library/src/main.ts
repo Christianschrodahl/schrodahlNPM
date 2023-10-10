@@ -21,8 +21,15 @@ export default {
 
     if(options.customTheme){
       try {
+
+        //If default exist, use default
+        if(options.customTheme.hasOwnProperty('default')){
+          theme = deepMerge(theme, options.customTheme.default)
+        }
+
         //if custom theme exist in the project
         theme = deepMerge(theme, options.customTheme[themeMode.value])
+        console.log(theme)
       } catch (error) {
         console.error(error)
       }

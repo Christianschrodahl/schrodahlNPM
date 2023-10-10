@@ -27,9 +27,9 @@ let themeColors = computed({
         return e
     }
 })
-let baseStyle = ref(createButtonStyle({...prop, colors: themeColors.value, colorMode: colorMode.value}))
+let baseStyle = ref(createButtonStyle({...prop, colors: themeColors.value, colorMode: colorMode.value}, themeStyle))
 watch(()=>themeStyle, (v)=>{
-    baseStyle.value = createButtonStyle({...prop, colors: themeColors.value, colorMode: colorMode.value})
+    baseStyle.value = createButtonStyle({...prop, colors: themeColors.value, colorMode: colorMode.value}, themeStyle)
 },{deep: true})
 
 </script>

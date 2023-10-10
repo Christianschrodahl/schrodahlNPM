@@ -61,6 +61,12 @@ declare type sizes = {
     xxs?: string;
     base?: string;
 };
+declare type weights = {
+    bold?: string;
+    semiBold?: string;
+    medium?: string;
+    regular: string;
+};
 declare type lineHeights = {
     base: string;
 };
@@ -72,4 +78,6 @@ export declare type themeProps = {
     button?: any;
     breakpoints?: sizes;
     spaces?: sizes;
+    fontSize?: sizes;
+    fontWeights?: weights;
 };
