@@ -75,7 +75,7 @@ declare type weights= {
   bold?: string,
   semiBold?: string,
   medium?: string,
-  regular: string,
+  regular?: string,
 
 }
 declare type lineHeights = {
