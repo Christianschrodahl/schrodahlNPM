@@ -13,7 +13,7 @@ export default (props: Record<string, any>, baseStyles: Record<string, any>, the
       res.borderRadius = theme.radii.lg
       
     }else if(isValidSize(props?.rounded)){
-      console.log("i WTF IS THIS", theme.radii)
+      
       res.borderRadius = theme.radii[props?.rounded]
     }else{
       res.borderRadius = props?.rounded

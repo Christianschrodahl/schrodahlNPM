@@ -26,6 +26,11 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    ```app.use(norUI, {
          colorMode: 'light',
          customTheme:{
+            default: {
+               radii: {
+                  xl: "20px"
+               }
+            },
             dark: {
                body:{
                 backgroundColor: '#121A12',

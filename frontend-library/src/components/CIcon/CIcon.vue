@@ -8,21 +8,7 @@ import generateRandomUniqueID from '@/utils/uniqueID';
 const {as= 'i', space= 'auto', ...props} = defineProps<{as: string|Component, space?: string }>() 
 
 const uniqueCompId = generateRandomUniqueID()
-//let dynamicComponent = shallowRef(null)//typeof as === 'string'  ? import(`@phosphor-icons/vue`)[as] : 'i'
 
-/*import(`@phosphor-icons/vue`).then(module =>{
-    if(typeof as === 'string' ){
-        const currentIcon = module[as]
-        dynamicComponent.value = currentIcon
-    }else{
-        dynamicComponent.value = as
-    }
-    
-    
-}).catch(error=>{
-    console.log(`Failed to load dynamic component: ${as}`)
-    dynamicComponent.value = 'i'
-})*/
 </script>
 <style scoped>
 .CIcon{}

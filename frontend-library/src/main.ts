@@ -8,12 +8,12 @@ import deepMerge from './utils/deepMerge'
 import { setCustomStyleFromAttr, themeSetup, settingUpGlobalStyles } from './customTheme/utils/styles';
 import { VCol, VRow } from './directives/grid';
 import CThemeProvider from '@/components/CThemeProvider/CThemeProvider.vue'
-
+import type { themeProps } from './customTheme/theme';
 interface appOptions{
   customTheme?:  Record<string, any>,
   colorMode?: 'light' | 'dark'
 }
-
+export type {themeProps, appOptions}
 export default {
   install: (app: App, options: appOptions) => {
     const themeMode = ref(options?.colorMode ? options.colorMode : 'dark');
